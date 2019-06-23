@@ -7,6 +7,14 @@
 @mixin cards{
     display: flex;
     justify-content: space-around;
+    width: 1000px;
+
+}
+@mixin inner_card_style {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 5px;
 }
 .header{
     @include header_style();
@@ -56,8 +64,79 @@
     font-weight: map-get($button_settings,"button_text_weight");
     font-size: map-get($button_settings,"button_text_size");
 }
-
-.section{
-    
-    
+.section_card_wrap{
+    @include cards();
 }
+.section_card{
+  @include inner_card_style();
+
+}
+.section_text{
+    text-align: center;
+    font-weight:$subtitle_text_weight;
+    font-size: 30px;
+    font-family: $main_font;
+}
+.section_card{
+    width:map-get($card_settings , card_width);
+    height: map-get($card_settings , card_height);
+    background-color: map-get($card_settings, card_color);
+    color:map-get($card_settings,card_text_color);
+}
+    .section_card_heading{
+        padding:0;
+    }
+    .section_card_img{
+        width: 230px;
+        height: 150px;
+        border-radius: 5px;
+        margin-top:10px;
+    }
+    .section_card_text{
+        text-align: center;
+        font-size:13px;
+    }
+.section_banner{
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    margin-top:120px;
+    margin-left:160px;
+    width:map-get($banner , baner_width);
+    background:map-get($banner ,baner_background);
+    border-radius: map-get($banner, baner_radius);
+}
+.footer{
+
+    width: map-get($footer_design,footer_width);
+    height: map-get($footer_design,footer_height);
+    background-color:map-get($footer_design,footer_background);
+    margin-top:160px;
+}
+.footer-wrap{
+    @include cards();
+
+}
+.footer-logo{
+    
+    p{
+        display: flex;
+        flex-direction: column;
+        color:$main_text_color;
+        font-family: $main_font;
+        font-size:20px;
+        font-weight:$subtitle_text_weight;
+        margin-left: 20px;
+        
+    }
+    span{
+       color:$main_text_color;
+       font-size:15px;
+       font-weight: normal;
+    }
+}
+.footer_text{
+    width:300px;
+   @extend .footer-logo
+}
+

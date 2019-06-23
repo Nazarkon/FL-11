@@ -20,9 +20,23 @@ $button_settings:(
 
 $card_settings:(
 
-"card_width":300px,
-"card_height":500px,
+"card_width":260px,
+"card_height":350px,
 "card_color": rgb(33,35,46),
 "card_text_color": rgb(255,255,255),
 
+);
+
+$banner:(
+   "baner_width":700px,
+   "baner_background": linear-gradient(to right,rgb(98,146,28),rgb(47,94,205)),
+   "baner_radius": 5px,
+);
+
+$footer_design:(
+
+"footer_width": 1000px,
+"footer_height": 200px,
+"footer_background": rgb(33,35,46),
+"footer_text_color" : rgb(255,255,255),
 );
