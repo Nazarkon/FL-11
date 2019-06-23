@@ -1,0 +1,63 @@
+@mixin header_style {
+    display: flex;
+    border-bottom-right-radius: $header_block_radius;
+    width: $header_block_width;
+    height: $header_block_heigth;
+}
+@mixin cards{
+    display: flex;
+    justify-content: space-around;
+}
+.header{
+    @include header_style();
+    background-image: $font_image;
+    background-repeat: no-repeat;
+    background-size:100%;
+    
+}
+.landing-logo{
+    display: flex;
+    align-items: center;
+     p{
+         display: flex;
+         flex-direction: column;
+         color:$main_text_color;
+         font-family: $main_font;
+         font-size:20px;
+         font-weight:$subtitle_text_weight;
+         margin-left: 20px;
+         
+     }
+     span{
+        color:$main_text_color;
+        font-size:15px;
+        font-weight: normal;
+     }
+}
+.header_heading{
+    width:450px;
+    font-size: $text_size_title;
+    font-family:$main_font;
+    font-weight:$title_text_weight;
+}
+
+.header_text{
+      width: 650px;
+      text-align: left;
+      font-family:$main_font;
+      font-weight:100;
+     font-size:$text_size_main;
+}
+.header_button{
+    padding:map-get($button_settings,"button_padd");
+    background-color: map-get($button_settings,"button_color");
+    border:map-get($button_settings,"button_border");
+    color:map-get($button_settings,"button_text_color");
+    font-weight: map-get($button_settings,"button_text_weight");
+    font-size: map-get($button_settings,"button_text_size");
+}
+
+.section{
+    
+    
+}

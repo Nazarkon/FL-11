@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  border-bottom-right-radius: 300px;
+  width: 1200px;
+  height: 700px;
+  background-image: url(../img/m-h-night.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%; }
+
+.landing-logo {
+  display: flex;
+  align-items: center; }
+  .landing-logo p {
+    display: flex;
+    flex-direction: column;
+    color: #2c2f3c;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 20px; }
+  .landing-logo span {
+    color: #2c2f3c;
+    font-size: 15px;
+    font-weight: normal; }
+
+.header_heading {
+  width: 450px;
+  font-size: 60px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 800; }
+
+.header_text {
+  width: 650px;
+  text-align: left;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 100;
+  font-size: 20px; }
+
+.header_button {
+  padding: 15px 35px 15px 35px;
+  background-color: #699900;
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 15px; }

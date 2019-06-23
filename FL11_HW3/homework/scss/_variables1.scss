@@ -1,0 +1,28 @@
+$main_font:'Source Sans Pro', sans-serif;
+$text_size_title:60px;
+$text_size_main:20px;
+$header_block_width:1200px;
+$header_block_heigth:700px;
+$header_block_radius:300px;
+$font_image: url(../img/m-h-day.jpg);
+$main_text_color: rgb(44,47,60);
+$sub_text_color: rgb(255,255,255);
+$subtitle_text_weight: 600;
+$title_text_weight:800;
+$button_settings:(
+    "button_padd": 15px 35px 15px 35px,
+    "button_color": rgb(105,153,0),
+    "button_border":none,
+    "button_text_color":rgb(255,255,255),
+    "button_text_weight":600,
+    "button_text_size":15px,
+);
+
+$card_settings:(
+
+"card_width":300px,
+"card_height":500px,
+"card_color": rgb(33,35,46),
+"card_text_color": rgb(255,255,255),
+
+);
