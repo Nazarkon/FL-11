@@ -59,7 +59,7 @@ section {
   }
   .flex-2-col{
     display:flex;
-    align-items: baseline;
+    align-items: center;
   }
   .heading a:visited {
     color: #ffb347;
@@ -69,10 +69,10 @@ section {
   }
   #contact_name,#contact_email,#contact_subject{
       border:none;
-      border-bottom: 3px solid  rgb(135, 240, 252);
+      border-bottom: 3px solid  rgb(159, 216, 251);
   }
   #contact_message{
-      border:3px solid  rgb(135, 240, 252);
+      border:3px solid  rgb(159, 216, 251);
   }
   .contact-form input[type=email] {
     background:  url(../img/email-icon.png) no-repeat right center;
@@ -88,13 +88,22 @@ section {
     background-color:rgb(118,205,215);
     color: #ffffff;
 }
-.contact-form button {
-    background: white;
-    border: 2px solid rgb(159,216,251);
-    color: rgb(159,216,251);
-    padding: 17px 50px;
+.submit-btn{
+  margin-left:872px;
+  border-radius:0;
+  background: white;
+  border: 2px solid rgb(159,216,251);
+  color: rgb(159,216,251);
+  padding: 18px 50px;
 
   }
+  .submit-btn:hover{
+    background: rgb(159,216,251);
+    border: 2px solid rgb(159,216,251);
+    color: white;
+    padding: 18px 50px;
+  
+    }
   .tm-banner-text{
     animation: rotate 5s linear 2;
   }
