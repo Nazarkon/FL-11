@@ -74,7 +74,7 @@ section {
   #contact_message{
       border:3px solid  rgb(135, 240, 252);
   }
-  .contact-form input[type="email"] {
+  .contact-form input[type=email] {
     background:  url(../img/email-icon.png) no-repeat right center;
     background-size: 29px 29px;
     padding-right: 30px;
@@ -96,7 +96,7 @@ section {
 
   }
   .tm-banner-text{
-    animation: rotate 5s linear 10;
+    animation: rotate 5s linear 2;
   }
   @keyframes rotate {
     from {
