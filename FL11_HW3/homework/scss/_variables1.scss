@@ -8,10 +8,12 @@ $header_block_heigth:700px;
 $header_block_radius:300px;
 $header_sub_color: rgb(47, 59, 63);
 $font_image: url(../img/m-h-day.jpg);
-$main_text_color: rgb(44,47,60);
+$main_text_color: rgb(47, 59, 63);
 $sub_text_color: rgb(255,255,255);
 $subtitle_text_weight: 600;
 $title_text_weight:800;
+$section_background:rgb(255,255,255);
+$underline_color:rgb(20,160,199);
 
 $button_settings:(
     "button_padd": 15px 35px 15px 35px,
@@ -41,7 +43,7 @@ $banner:(
 );    
 $footer_design:(
 
-"footer_width": 1000px,
+"footer_width": 1200px,
 "footer_height": 200px,
 "footer_background": rgb(33,35,46),
 "footer_text_color" : rgb(255,255,255),
