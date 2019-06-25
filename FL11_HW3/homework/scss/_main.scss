@@ -38,7 +38,7 @@ p{
          display: flex;
          flex-direction: column;
          color:$sub_text_color;
-         font-family:$third_font;
+         font-family:$second_font;
          font-size:20px;
          font-weight:$subtitle_text_weight;
          margin-left: 20px;
@@ -53,15 +53,6 @@ p{
 .header-wrap{
     margin-left: 100px;
 }
-.header_heading::before{
-    content: "";
-    position: absolute;
-    top:122px;
-    width: 255px;
-    z-index: -1;
-    height: 20px;
-    background-color: $underline_color;
-}
 .header_heading{
     position: relative;
     z-index: 1;
@@ -71,12 +62,22 @@ p{
     font-family:$main_font;
     font-weight:$title_text_weight;
     padding-bottom: 70px;
+
+    &::before{
+        content: "";
+        position: absolute;
+        top:122px;
+        width: 255px;
+        z-index: -1;
+        height: 20px;
+        background-color: $underline_color;
+    }
 }
 
 .header_text{
       width: 650px;
       text-align: left;
-      font-family:$third_font;
+      font-family:$second_font;
       font-weight:100;
       color:$header_sub_color;
      font-size:$text_size_main;
@@ -106,16 +107,6 @@ p{
 
 
 }
-.section_text::before{
-    content: "";
-    position: absolute;
-    width: 135px;
-    top:345px;
-    left:525px;
-    z-index:-1;
-    height: 11px;
-    background-color: $underline_color;
-}
 .section_text{
     position: relative;
     padding-top:320px;
@@ -125,6 +116,17 @@ p{
     font-weight:$subtitle_text_weight;
     font-size: 30px;
     font-family: $main_font;
+
+    &::before{
+    content: "";
+    position: absolute;
+    width: 135px;
+    top:345px;
+    left:525px;
+    z-index:-1;
+    height: 11px;
+    background-color: $underline_color;
+    }
 }
 .section_card{
     width:map-get($card_settings , card_width);
@@ -135,14 +137,15 @@ p{
     .section_card_heading{
         position: relative;
         z-index:1;
-        font-family: $second_font;
+        font-family:$main_font;
+        font-weight: $subtitle_text_weight;
         font-size: map-get($card_settings,card_title_size);
     }
     .section_card_underline{
         display: inline-block;
-        position: absolute;
+        position: relative;
         z-index:-20;
-        bottom: 22px;
+        bottom: 28px;
         width: 100%;
         height: 10px;
         background-color: $underline_color;
@@ -150,13 +153,13 @@ p{
     .section_card:nth-child(3){
          
         .section_card_text{
-            margin-top:20px;
+          margin-top:30px;
         }
         .section_card_underline{
             display: inline-block;
             position: absolute;
             z-index:-20;
-            bottom: 23px;
+            bottom: 7px;
             width: 100%;
             height: 10px;
             background-color: $underline_color;
@@ -170,11 +173,11 @@ p{
         margin-top:20px;
     }
     .section_card_text{
-        text-align: center;
-        font-family:$third_font;
+        text-align:center;
+        font-family:$second_font;
         font-size:map-get($card_settings , card_text_size);
-        padding-left: 10px;
-            padding-right: 10px;
+        width: map-get($card_settings, card_text_width);
+        height: map-get($card_settings, card_text_height);
 
     }
 .section_banner{
@@ -186,20 +189,23 @@ p{
     height: map-get($banner, banner_height);
     background:map-get($banner ,baner_background);
     border-radius: map-get($banner, baner_radius);
+
+    }
    .section_banner_text_wrap{
        padding-left: 80px;
+      
+       &::before{
+        content: "";
+        position: absolute;
+        width: 55px;
+        top:38px;
+        left:180px;
+        z-index: -1;
+        height: 11px;
+        background-color: $underline_color;
+       }
    }
-   .section_banner_heading::before{
-    content: "";
-    position: absolute;
-    width: 55px;
-    top:38px;
-    left:100px;
-    z-index: -1;
-    height: 11px;
-    background-color: $underline_color;
-   }
-    .section_banner_heading{
+     .section_banner_heading{
         position: relative;
         z-index: 1;
         color:$main_text_color;
@@ -210,7 +216,7 @@ p{
     }
     .section_banner_text{
         color:$sub_text_color;
-        font-family:$third_font;
+        font-family:$second_font;
         font-weight: 100;
         font-size: 13px;
     }
@@ -222,7 +228,6 @@ p{
         right:70px;
 
     }
-}
 .footer{
     width: map-get($footer_design,footer_width);
     height: map-get($footer_design,footer_height);
@@ -236,13 +241,12 @@ p{
     display: flex;
     justify-content: space-around;
     padding-top:70px;
-.footer_logo{
-width:170px;
+.footer-logo{
+    @extend .landing-logo;
 }
     p{
          color:$sub_text_color;
-         width: 300px;
-         font-size: 20px;
+         font-size:$text_size_main;
      }
      span{
         color:$sub_text_color;
@@ -251,13 +255,15 @@ width:170px;
      .footer_text{
          padding-top: 28px;
          font-size: 12px;
-         font-family:$third_font;
+         font-family:$second_font;
+         width: 300px;
      }
      .footer-cr{
         padding-top: 40px;
          text-align: bottom;
-         width: 150px;
          font-size: 11px;
+         font-family:$second_font;
+         width: 300px;
      }
 }
 
