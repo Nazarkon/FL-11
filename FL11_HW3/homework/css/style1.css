@@ -1,4 +1,4 @@
-p {
+body, p {
   margin: 0;
   padding: 0; }
 
@@ -13,22 +13,22 @@ p {
   background-repeat: no-repeat;
   background-size: 100%; }
 
-.landing-logo, .footer-wrap .footer-logo {
+.landing-logo {
   display: flex;
   align-items: center;
   padding-top: 30px;
   padding-bottom: 70px; }
-  .landing-logo p, .footer-wrap .footer-logo p {
+  .landing-logo p {
     display: flex;
     flex-direction: column;
-    color: white;
+    color: #2C2F3C;
     font-family: "Hind", sans-serif;
     font-size: 20px;
     font-weight: 600;
     margin-left: 20px; }
-  .landing-logo span, .footer-wrap .footer-logo span {
-    color: white;
-    font-size: 15px;
+  .landing-logo span {
+    color: #2C2F3C;
+    font-size: 12px;
     font-weight: normal; }
 
 .header-wrap {
@@ -38,7 +38,7 @@ p {
   position: relative;
   z-index: 1;
   width: 450px;
-  color: #2f3b3f;
+  color: #2C2F3C;
   font-size: 60px;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 800;
@@ -67,12 +67,13 @@ p {
   border: none;
   color: white;
   font-weight: 600;
-  font-size: 15px; }
+  font-size: 15px;
+  border-radius: 5px; }
 
 .section {
   position: relative;
   z-index: -2;
-  bottom: 300px;
+  bottom: 290px;
   width: 1200px;
   height: 900px;
   background-color: white; }
@@ -94,7 +95,7 @@ p {
   padding-top: 320px;
   margin-bottom: 30px;
   padding-left: 370px;
-  color: #2f3b3f;
+  color: #2C2F3C;
   font-weight: 600;
   font-size: 30px;
   font-family: "Source Sans Pro", sans-serif; }
@@ -159,7 +160,7 @@ p {
   position: absolute;
   z-index: -1;
   margin-top: 120px;
-  margin-left: 160px;
+  margin-left: 190px;
   width: 700px;
   height: 100px;
   background: linear-gradient(to right, #62921c, #2f5ecd);
@@ -180,14 +181,14 @@ p {
 .section_banner_heading {
   position: relative;
   z-index: 1;
-  color: #2f3b3f;
+  color: #2C2F3C;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 800;
   font-size: 25px;
   padding-top: 20px; }
 
 .section_banner_text {
-  color: white;
+  color: #2C2F3C;
   font-family: "Hind", sans-serif;
   font-weight: 100;
   font-size: 13px; }
@@ -209,7 +210,7 @@ p {
 .footer-wrap {
   display: flex;
   justify-content: space-around;
-  padding-top: 70px; }
+  padding-top: 60px; }
   .footer-wrap p {
     color: white;
     font-size: 20px; }

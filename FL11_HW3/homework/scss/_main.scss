@@ -17,7 +17,8 @@
     flex-wrap: wrap;
     border-radius: 5px;
 }
-p{
+
+body,p{
     margin:0;
     padding: 0;
 }
@@ -39,14 +40,14 @@ p{
          flex-direction: column;
          color:$sub_text_color;
          font-family:$second_font;
-         font-size:20px;
+         font-size:$text_size_main;
          font-weight:$subtitle_text_weight;
          margin-left: 20px;
          
      }
      span{
         color:$sub_text_color;
-        font-size:15px;
+        font-size:12px;
         font-weight: normal;
      }
 }
@@ -90,11 +91,12 @@ p{
     color:map-get($button_settings,"button_text_color");
     font-weight: map-get($button_settings,"button_text_weight");
     font-size: map-get($button_settings,"button_text_size");
+    border-radius:5px;
 }
 .section{
     position: relative;
     z-index: -2;
-    bottom:300px;
+    bottom:290px;
     width: 1200px;
     height: 900px;
     background-color: $section_background;
@@ -184,7 +186,7 @@ p{
     position: absolute;
     z-index: -1;
     margin-top:120px;
-    margin-left:160px;
+    margin-left:190px;
     width:map-get($banner , baner_width);
     height: map-get($banner, banner_height);
     background:map-get($banner ,baner_background);
@@ -240,16 +242,16 @@ p{
 .footer-wrap{
     display: flex;
     justify-content: space-around;
-    padding-top:70px;
+    padding-top:60px;
 .footer-logo{
-    @extend .landing-logo;
+   
 }
     p{
-         color:$sub_text_color;
+         color:map-get($footer_design,footer_text_color);
          font-size:$text_size_main;
      }
      span{
-        color:$sub_text_color;
+        color:map-get($footer_design,footer_text_color);
         font-size: 15px;
      }
      .footer_text{
