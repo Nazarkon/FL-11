@@ -31,12 +31,17 @@ $card_settings:(
 "card_color": rgb(59,63,80),
 "card_text_color": rgb(255,255,255),
 "card_title_size":20px,
-"card_text_size":12px,
+"card_text_size":15px,
 "card_text_width":255px,
 "card_text_height":150px,
 
 );
-
+$underline_position:(
+    "underline_left":180px,
+    "underline_top":38px,
+    "underline_bottom":20px,
+    "underline_bottom_2":1px,
+);
 $banner:(
    "baner_width":700px,
    "banner_height":100px,

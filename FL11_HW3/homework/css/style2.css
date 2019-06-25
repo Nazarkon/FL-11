@@ -125,7 +125,7 @@ p {
   display: inline-block;
   position: relative;
   z-index: -20;
-  bottom: 28px;
+  bottom: 20px;
   width: 100%;
   height: 10px;
   background-color: #ff4e33; }
@@ -136,7 +136,7 @@ p {
   display: inline-block;
   position: absolute;
   z-index: -20;
-  bottom: 7px;
+  bottom: 1px;
   width: 100%;
   height: 10px;
   background-color: #ff4e33; }
@@ -151,7 +151,7 @@ p {
 .section_card_text {
   text-align: center;
   font-family: "Fresca", sans-serif;
-  font-size: 12px;
+  font-size: 15px;
   width: 255px;
   height: 150px; }
 
