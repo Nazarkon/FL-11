@@ -78,15 +78,13 @@ li{
     padding-top:450px;
     padding-bottom:210px;
 }
-.head_menu_button a{
-    text-decoration: none;
-    font-size:20px;
-    color:#FFFFFF;
-}
 .head_menu_button{
     background-color: transparent;
     border:2px solid #FFFFFF;
     padding:20px 90px 20px 90px;
+    text-decoration: none;
+    font-size:20px;
+    color:#FFFFFF;
 }
 .main_info{
     width: 100%;
@@ -333,8 +331,6 @@ span{
     width:600px;
     height: 90px;
     margin-bottom: 70px;
-}
-.main_gallery_news_button a{
     text-decoration: none;
     font-size: 25px;
     color:#FFFFFF;
