@@ -363,6 +363,7 @@ span{
 .registration_form_description{
     padding-top:70px;
     padding-bottom:30px;
+    margin-left:30px;
     font-size: 20px;
 }
 #registration_form{
