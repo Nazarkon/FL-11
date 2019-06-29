@@ -1,0 +1,108 @@
+/*
+ * Feel free to change name of colors if you need it
+ * Feel free to add new colors if you need it
+ */
+ :root {
+  --bg-color--dark: #0b192f;
+  --bg-color--header: #162b4d;
+  --link: #fff;
+  --link--hover: #b8b8b8;
+  --bg-footer-color: #162b4d;;
+}
+
+body {
+  font-family: roboto;
+}
+.post-1 {
+	background: #B71757;
+}
+.post-2 {
+	background: #0D7E71;
+}
+.post-3 {
+	background: #b1660e;
+}
+.post-4 {
+	background: #d12767;
+}
+.post-5 {
+	background: #2d95bb;
+}
+
+body{
+  background-color: #0b192f;
+  margin: 0px;
+}
+.grid-container{
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: auto 800px auto;
+}
+.head{
+  display: grid;
+  grid-column: 2/3;
+  grid-template-columns: 2.5fr 2.5fr;
+  background-color: #162b4d;
+  height: 80px;
+}
+.logo{
+  color:white;
+  font-size: 30px;
+  align-self:center;
+  font-weight: 100;
+  margin-left:30px;
+}
+.second-color{
+  color:#B71757;
+}
+.header-menu{
+  justify-self: end;
+  align-self:center;
+}
+.header-menu li{
+  display: inline-block;
+  list-style-type: none;
+  margin-right:30px;
+}
+.header-menu a{
+  color: white;
+  font-size: 20px;
+  font-weight: 100;
+  text-decoration: none;
+}
+.header-menu li:hover{
+  background-color: #b8b8b8;
+}
+main{
+  grid-column: 2/3;
+  grid-template-columns: 50% 50%;
+}
+.gallery{
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+}
+.article-gallery__item{
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.article-gallery__photo1{
+  width:479px;
+  height:440px;
+  background: url(/img/post1.jpg) no-repeat;
+  background-size: 100%;
+}
+.article-gallery__text{
+  width:479px;
+  height:440px;
+  background-color: #b71757;
+}
+.article-gallery__photo2{
+  background: url(/img/post2.jpg) no-repeat;
+  background-size: 100%;
+  width:100%;
+  height:430px;
+}
+.article-gallery__text{
+  justify-self: end;
+}
+
