@@ -445,6 +445,9 @@ main{
  .news-container__description{
    width: 95%;
  }
+ .gallery{
+   width:460px;
+ }
  .short-desription__company{
   height:200px;
   margin-bottom: 10px;
