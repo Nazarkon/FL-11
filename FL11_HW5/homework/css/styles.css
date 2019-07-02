@@ -14,6 +14,8 @@ h1,p{
 }
 body {
   font-family: roboto;
+  background-color: #0b192f;
+  margin: 0px;
 }
 .burger-menu{
   display: none;
@@ -59,11 +61,6 @@ h1{
 }
 .post-5 {
   background: #2d95bb;
-}
-
-body{
-  background-color: #0b192f;
-  margin: 0px;
 }
 .container{
   width:1200px;
@@ -304,7 +301,6 @@ main{
   width:140px;
 }
 @media screen and (max-width:768px){
-
   .container{
     width:700px;
     margin-left:auto;
@@ -385,10 +381,13 @@ main{
  }
 }
 @media screen and (max-width:480px){
+  body{
+    width: 480px;
+  }
   .container{
+    display: block;
     width:460px;
-    margin-left:auto;
-    margin-right:auto;
+    margin: auto;
   }
   .logo{
     margin-bottom: 20px;
@@ -438,7 +437,9 @@ main{
  .article-gallery__photo ,
  .article-gallery__subphoto,
  .article-gallery__text,
- .post-5,.aside-news__item,.aside-news__photo,.aside-news__photo2{
+ .post-5,.aside-news__item,
+ .aside-news__photo,
+ .aside-news__photo2{
    width: 460px;
  }
  .news-container__description{
