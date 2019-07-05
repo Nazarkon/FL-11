@@ -28,7 +28,8 @@ if (validationLogin === validateAdminEmail || validationLogin === validateUserEm
 
                     alert('Canceled');
                 }else{
-                    alert('You wrote the wrong Password.');
+                    newPassword = prompt('Enter new password again', '');
+                    alert('You have successfully changed your password');
                 }
             } else if (validationPassword === null || validationPassword === '') {
 
