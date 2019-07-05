@@ -18,18 +18,22 @@ if (validationLogin === validateAdminEmail || validationLogin === validateUserEm
 
             if (validationPassword === correctUserPassword || validationPassword === correctAdminPassword) {
 
-                let newPassword = prompt('Enter new password', '');
+                let firstnewPassword = prompt('Enter new password', '');
 
-                if (newPassword.length < minimumPasswordLength) {
+                if (firstnewPassword.length < minimumPasswordLength) {
 
                     alert('It’s too short password. Sorry.');
 
-                } else if (newPassword === null || newPassword === '') {
+                } else if (firstnewPassword === null || firstnewPassword === '') {
 
                     alert('Canceled');
-                }else{
-                    newPassword = prompt('Enter new password again', '');
+                } else {
+                    let secondnewPassword = prompt('Enter new password again', '');
+                     if(firstnewPassword !== secondnewPassword){
+                         alert('Passwords do not match');
+                    }else{
                     alert('You have successfully changed your password');
+                    }
                 }
             } else if (validationPassword === null || validationPassword === '') {
 
