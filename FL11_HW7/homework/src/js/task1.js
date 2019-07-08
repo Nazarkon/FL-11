@@ -1,5 +1,7 @@
-let validateAdminEmail = 'user@gmail.com', validateUserEmail = 'admin@gmail.com';
-let correctUserPassword = 'UserPass', correctAdminPassword = 'AdminPass';
+let validateAdminEmail = 'user@gmail.com',
+    validateUserEmail = 'admin@gmail.com';
+let correctUserPassword = 'UserPass',
+    correctAdminPassword = 'AdminPass';
 let minimumLength = 6;
 let minimumPasswordLength = 5;
 
@@ -29,10 +31,10 @@ if (validationLogin === validateAdminEmail || validationLogin === validateUserEm
                     alert('Canceled');
                 } else {
                     let secondnewPassword = prompt('Enter new password again', '');
-                     if(firstnewPassword !== secondnewPassword){
-                         alert('Passwords do not match');
-                    }else{
-                    alert('You have successfully changed your password');
+                    if (firstnewPassword !== secondnewPassword) {
+                        alert('Passwords do not match');
+                    } else {
+                        alert('You have successfully changed your password');
                     }
                 }
             } else if (validationPassword === null || validationPassword === '') {
