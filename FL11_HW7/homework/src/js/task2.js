@@ -10,11 +10,9 @@ const multiplierSummu = 2;
 
 if (startGame === true) {
     for (let tentative = 3; tentative > 0; tentative--) {
-        let userPrediction = +prompt(
-            `Choose a roulette pocket number from 0 to ${maxNumber}
-            Attempts left: ${tentative}
-            Total prize:${finalSumma}$
-            Possible prize on current attempt:${maxSumma}`);
+        let userPrediction = +prompt('Choose a roulette pocket number from 0 to 8\nAttempts left: ' + 
+        tentative + '\nTotal prise: $' + finalSumma + 
+        '\nPossible prize on current attempt: $' + maxSumma,'');
         if (userPrediction === randomize) {
             currentSumma = currentSumma + maxSumma;
             finalSumma = currentSumma;
