@@ -118,56 +118,7 @@ let daysBetween = (firstDate, secondDate) => {
 }
 daysBetween(new Date('2016-03-18T00:00:00'), new Date('2016-04-19T00:00:00'));
 
-// let data = [{
-//     'id': '5b5e3168c6bf40f2c1235cd6',
-//     'index': 0,
-//     ' birthday ': '2016-03-18T00:00:00',
-//     'eyeColor': 'green',
-//     'name': 'Stein',
-//     'favoriteFruit': 'apple'
-// },
-// {
-//     '_id': '5b5e3168e328c0d72e4f27d8',
-//     'index': 1,
-//     ' birthday ': '1991-02-11T00:00:00',
-//     'eyeColor': 'blue',
-//     'name': 'Cortez',
-//     'favoriteFruit': 'strawberry'
-// },
-// {
-//     '_id': '5b5e3168cc79132b631c666a',
-//     'index': 2,
-//     ' birthday ': '1984-04-17T00:00:00',
-//     'eyeColor': 'blue',
-//     'name': 'Suzette',
-//     'favoriteFruit': 'apple'
-// },
-// {
-//     '_id': '5b5e31682093adcc6cd0dde5',
-//     'index': 3,
-//     ' birthday ': '1994-04-17T00:00:00',
-//     'eyeColor': 'green',
-//     'name': 'George',
-//     'favoriteFruit': 'banana'
-// }
-// ]
-// let getAmountOfAdultPeople = (data) => {
-     
-//         let numofadults = 0;
-//   for (let i=0; i<data.length; i++) {
-//    let birth = new Date(data[i][' birthday ']);
-//    showFormattedDate(birth);
-//     let years = daysBetween( birth,new Date());
-//     years = years / 365 ;
-//     if (years >= 18){
-//       numofadults++;  
-//     } 
-//   }
-//   console.log(numofadults);
-//   return numofadults;
-// }
 
-// getAmountOfAdultPeople(data);
 
 function keys(value){
    let array = [];
