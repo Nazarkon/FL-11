@@ -72,7 +72,7 @@ let mapArray = (myArray, returnarray) => {
     return console.log(myArray);
 }
 // mapArray([2, 5, 8], function (el) {
-//     return el + addition
+//     return el + 3
 // });
 
 //Task#4
@@ -176,14 +176,14 @@ let amountOfPeople = (data) => {
         daysInYear: 365,
         old: 18
     }
-    let peopleOver18 = [];
+    let Adult = [];
     let date = new Date();
     for (let i = 0; i < data.length; i++) {
         let result = Math.round(daysBetween(date, new Date(data[i][' birthday '])) / mainInfo.daysInYear);
-        peopleOver18.push(result);
+        Adult.push(result);
     }
 
-    return filterArray(peopleOver18, function (el) {
+    return filterArray(Adult, function (el) {
         return el > mainInfo.old;
     });
 }
