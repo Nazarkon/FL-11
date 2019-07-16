@@ -1,3 +1,4 @@
+//Task#0
 let getNumbers = (temp) => {
     temp = temp.replace(/\D/g, '');
     parseInt(temp, 10);
@@ -11,7 +12,7 @@ getNumbers('string');
 getNumbers('n1um3ber95');
 
 //Task#1
-function findTypes(...array) {
+let findTypes = (...array) => {
     let myObject = {
 
         'object': 0,
@@ -49,7 +50,7 @@ findTypes('number')
 findTypes(null, 5, 'hello')
 
 //Task#2
-function executeforEach(myArray, returnarray) {
+let executeforEach = (myArray, returnarray) => {
     let newarr = [];
     for (let i = 0; i < myArray.length; i++) {
 
@@ -63,10 +64,10 @@ executeforEach([1, 2, 3], function (el) {
 
 
 //Task#3
-function mapArray(myArray, returnarray) {
+let mapArray = (myArray, returnarray) => {
 
     let newarr = [];
-    executeforEach(myArray,returnarray);
+    executeforEach(myArray, returnarray);
     newarr.push(myArray);
     return console.log(myArray);
 }
@@ -75,11 +76,11 @@ mapArray([2, 5, 8], function (el) {
 });
 
 //Task#4
-function filterArray(myArray,returnarray) {
+let filterArray = (myArray, returnarray) => {
     let newarr = [];
     executeforEach(myArray, function (el) {
         if (returnarray(el) === true) {
-           newarr.push(el);
+            newarr.push(el);
         }
     });
     return console.log(newarr);
@@ -124,15 +125,15 @@ canConvertToDate('2016-03-18T00:00:00');
 let daysBetween = (firstDate, secondDate) => {
 
     let countdays = Math.round(Math.abs(secondDate.getTime() - firstDate.getTime()) / (1000 * 3600 * 24));
-    return console.log(countdays);
+    return countdays;
+
 
 }
 daysBetween(new Date('2016-03-18T00:00:00'), new Date('2016-04-19T00:00:00'));
 
-// //Task#8
+//Task#8
 
-let data = [
-    {
+let data = [{
         '_id': '5b5e3168c6bf40f2c1235cd6',
         'index': 0,
         ' birthday ': '2016-03-18T00:00:00',
@@ -159,46 +160,53 @@ let data = [
     {
         '_id': '5b5e31682093adcc6cd0dde5',
         'index': 3,
-        ' birthday ' : '1994-04-17T00:00:00',
+        ' birthday ': '1994-04-17T00:00:00',
         'eyeColor': 'green',
         'name': 'George',
         'favoriteFruit': 'banana'
     }
 ];
 
-function amountOfPeople(data) {
-    let year = 365;
+let amountOfPeople = (data) => {
+    let mainInfo = {
+        daysInYear: 365,
+        old: 18
+    }
     let peopleOver18 = [];
     let date = new Date();
     for (let i = 0; i < data.length; i++) {
-      let result = Math.round(daysBetween(date, new Date(data[i][' birthday '])) / year);
-      peopleOver18.push(result);
+        let result = Math.round(daysBetween(date, new Date(data[i][' birthday '])) / mainInfo.daysInYear);
+        peopleOver18.push(result);
     }
 
     return filterArray(peopleOver18, function (el) {
-        return el > 18;
+        return el > mainInfo.old;
     });
 }
 amountOfPeople(data);
 
 
 //Task#9
-function keys(value){
-   let array = [];
-       for (const item in value) {
-           if (value.hasOwnProperty(item)) {
-               array.push(item)
+let keys = (value) => {
+    let array = [];
+    for (const item in value) {
+        if (value.hasOwnProperty(item)) {
+            array.push(item)
 
-           }
-       }
-       return console.log(array);
-   }
-keys({keyOne: 1, keyTwo: 2, keyThree: 3}) ;
+        }
+    }
+    return console.log(array);
+}
+keys({
+    keyOne: 1,
+    keyTwo: 2,
+    keyThree: 3
+});
 
 //Task#10
-function showValues(values){
+let showValues = (values) => {
 
-    let array =[];
+    let array = [];
     for (const item in values) {
         if (values.hasOwnProperty(item)) {
             array.push(values[item]);
@@ -207,4 +215,8 @@ function showValues(values){
     }
     return console.log(array);
 }
-showValues({keyOne: 1, keyTwo: 2, keyThree: 3}) ;
+showValues({
+    keyOne: 1,
+    keyTwo: 2,
+    keyThree: 3
+});
