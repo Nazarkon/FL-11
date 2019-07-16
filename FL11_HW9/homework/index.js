@@ -46,8 +46,8 @@ let findTypes = (...array) => {
     }
 
 }
-findTypes('number')
-findTypes(null, 5, 'hello')
+// findTypes('number')
+// findTypes(null, 5, 'hello')
 
 //Task#2
 let executeforEach = (myArray, returnarray) => {
@@ -58,22 +58,22 @@ let executeforEach = (myArray, returnarray) => {
     }
     newarr.push(returnarray);
 }
-executeforEach([1, 2, 3], function (el) {
-    console.log(el);
-});
+// executeforEach([1, 2, 3], function (el) {
+//     console.log(el);
+// });
 
 
 //Task#3
 let mapArray = (myArray, returnarray) => {
-
+   
     let newarr = [];
     executeforEach(myArray, returnarray);
     newarr.push(myArray);
     return console.log(myArray);
 }
-mapArray([2, 5, 8], function (el) {
-    return el + 3
-});
+// mapArray([2, 5, 8], function (el) {
+//     return el + addition
+// });
 
 //Task#4
 let filterArray = (myArray, returnarray) => {
@@ -85,10 +85,10 @@ let filterArray = (myArray, returnarray) => {
     });
     return console.log(newarr);
 }
-filterArray([2, 5, 8], function (el) {
-    return el > 3;
+// filterArray([2, 5, 8], function (el) {
+//     return el > 3;
 
-});
+// });
 
 
 //Task#5
@@ -124,12 +124,16 @@ canConvertToDate('2016-03-18T00:00:00');
 //Task#7
 let daysBetween = (firstDate, secondDate) => {
 
-    let countdays = Math.round(Math.abs(secondDate.getTime() - firstDate.getTime()) / (1000 * 3600 * 24));
+        let firstpar = 1000;
+        let secondpar = 3600;
+        let thirdpar = 24
+let countdays = Math.round(Math.abs(secondDate.getTime() - firstDate.getTime()) / (firstpar * secondpar * thirdpar));
     return countdays;
 
 
+
 }
-daysBetween(new Date('2016-03-18T00:00:00'), new Date('2016-04-19T00:00:00'));
+// console.log(daysBetween(new Date('2016-03-18T00:00:00'), new Date('2016-04-19T00:00:00')));
 
 //Task#8
 
