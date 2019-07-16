@@ -72,7 +72,7 @@ let mapArray = (myArray, returnarray) => {
     return console.log(myArray);
 }
 // mapArray([2, 5, 8], function (el) {
-//     return el + addition
+//     return el + 3
 // });
 
 //Task#4
