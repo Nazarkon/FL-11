@@ -176,14 +176,14 @@ let amountOfPeople = (data) => {
         daysInYear: 365,
         old: 18
     }
-    let peopleOver18 = [];
+    let Adults = [];
     let date = new Date();
     for (let i = 0; i < data.length; i++) {
         let result = Math.round(daysBetween(date, new Date(data[i][' birthday '])) / mainInfo.daysInYear);
-        peopleOver18.push(result);
+        Adults.push(result);
     }
 
-    return filterArray(peopleOver18, function (el) {
+    return filterArray(Adults, function (el) {
         return el > mainInfo.old;
     });
 }
