@@ -225,12 +225,141 @@
 //     keyThree: 3
 // });
 
+<<<<<<< HEAD
 'use strict'
 let a=0,b=0;
 const foo = function(a=2){
     b=3;
     return function(b=4){
         return a+b;
+=======
+
+//Task#5
+let showFormattedDate = (calendar) => {
+
+    let allMonthes = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'];
+    let showinfo = {
+
+        month: calendar.getMonth(),
+        day: calendar.getDate(),
+        year: calendar.getFullYear()
+    }
+
+    return console.log(`Date : ${allMonthes[showinfo.month]} ${showinfo.day} ${showinfo.year}`);
+}
+
+//Task#6
+showFormattedDate(new Date('2019-01-27T01:10:00'));
+
+let canConvertToDate = (calendar) => {
+
+    if (Date.parse(calendar)) {
+        return console.log(true);
+    } else {
+        return console.log(false);
+    }
+
+}
+canConvertToDate('2016-13-18T00:00:00');
+canConvertToDate('2016-03-18T00:00:00');
+
+
+//Task#7
+let daysBetween = (firstDate, secondDate) => {
+
+        let firstpar = 1000;
+        let secondpar = 3600;
+        let thirdpar = 24
+let countdays = Math.round(Math.abs(secondDate.getTime() - firstDate.getTime()) / (firstpar * secondpar * thirdpar));
+    return countdays;
+
+
+
+}
+// console.log(daysBetween(new Date('2016-03-18T00:00:00'), new Date('2016-04-19T00:00:00')));
+
+//Task#8
+
+let data = [{
+        '_id': '5b5e3168c6bf40f2c1235cd6',
+        'index': 0,
+        ' birthday ': '2016-03-18T00:00:00',
+        'eyeColor': 'green',
+        'name': 'Stein',
+        'favoriteFruit': 'apple'
+    },
+    {
+        '_id': '5b5e3168e328c0d72e4f27d8',
+        'index': 1,
+        ' birthday ': '1991-02-11T00:00:00',
+        'eyeColor': 'blue',
+        'name': 'Cortez',
+        'favoriteFruit': 'strawberry'
+    },
+    {
+        '_id': '5b5e3168cc79132b631c666a',
+        'index': 2,
+        ' birthday ': '1984-04-17T00:00:00',
+        'eyeColor': 'blue',
+        'name': 'Suzette',
+        'favoriteFruit': 'apple'
+    },
+    {
+        '_id': '5b5e31682093adcc6cd0dde5',
+        'index': 3,
+        ' birthday ': '1994-04-17T00:00:00',
+        'eyeColor': 'green',
+        'name': 'George',
+        'favoriteFruit': 'banana'
+    }
+];
+
+let amountOfPeople = (data) => {
+    let mainInfo = {
+        daysInYear: 365,
+        old: 18
+    }
+    let Adults = [];
+    let date = new Date();
+    for (let i = 0; i < data.length; i++) {
+        let result = Math.round(daysBetween(date, new Date(data[i][' birthday '])) / mainInfo.daysInYear);
+        Adults.push(result);
+    }
+
+    return filterArray(Adults, function (el) {
+        return el > mainInfo.old;
+    });
+}
+amountOfPeople(data);
+
+
+//Task#9
+let keys = (value) => {
+    let array = [];
+    for (const item in value) {
+        if (value.hasOwnProperty(item)) {
+            array.push(item)
+
+        }
+    }
+    return console.log(array);
+}
+keys({
+    keyOne: 1,
+    keyTwo: 2,
+    keyThree: 3
+});
+
+//Task#10
+let showValues = (values) => {
+
+    let array = [];
+    for (const item in values) {
+        if (values.hasOwnProperty(item)) {
+            array.push(values[item]);
+
+        }
+>>>>>>> 3bfa67823991c988eb8c328cdec4493b54d3d1ce
     }
 }
 console.log(foo()(5));
