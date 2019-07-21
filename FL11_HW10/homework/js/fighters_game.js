@@ -29,7 +29,7 @@ class Fighter {
             if (Math.random() * interest < between) {
                 let damageValue = object.damage;
             console.log(this.getName() + ' give ' + this.getDamage() + ' damage ' + 'to ' + fighterAttack.getName());
-                Fighter2.dealDamage(damageValue);
+                fighterAttack.dealDamage(damageValue);
             } else {
                 console.log(this.getName() + ' missed');
             }
