@@ -1,0 +1,84 @@
+#root{
+    width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main_form{
+    width:800px;
+    height: 50px;
+    padding-left:20px;
+}
+.main_title{
+    color: rgb(57,180,254);
+    text-align: center;
+}
+form{
+    display: flex;
+    justify-content: center;
+}
+.material-icons{
+    font-size:55px;
+    color: rgb(200,208,216);
+}
+button{
+   margin-left:20px; 
+   padding: 0;
+   border:0;
+   background: transparent;
+}
+.underline{
+    width:920px;
+    height: 10px;
+    border-radius: 5px;
+    margin-top:25px;
+    margin-left: 25px;
+    background-color: rgb(231,239,247);
+}
+/* .shedule{
+    list-style-type: none;
+} */
+.label{
+    color:rgb(57,180,254);
+}
+.checkbox {
+	display: none;
+}
+.checkbox_custom {
+	position: relative;      
+	width: 25px;            
+	height: 25px;           
+	border: 1px solid black;
+    border-radius: 3px;
+    float: left;
+}
+
+.checkbox_custom,
+.label {
+	display: inline-block;
+    vertical-align: middle;
+    margin-left:10px;
+}
+.label{
+    font-size: 25px;
+}
+.pen{
+    font-size: 30px;
+    margin-left:10px;
+    float: right;
+}
+.delete2{
+    float: right;
+    font-size: 30px;
+}
+
+.checkbox:checked + .checkbox_custom::before {
+	content: "";             
+	display: block;			
+	position: absolute;      
+	top: 2px;
+	right: 2px;
+	bottom: 2px;
+	left: 2px;
+	background: #413548;
+
+}
