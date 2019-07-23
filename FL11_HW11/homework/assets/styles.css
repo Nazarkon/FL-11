@@ -34,9 +34,9 @@ button{
     margin-left: 25px;
     background-color: rgb(231,239,247);
 }
-/* .shedule{
+.shedule,.edit{
     list-style-type: none;
-} */
+}
 .label{
     color:rgb(57,180,254);
 }
@@ -48,7 +48,6 @@ button{
 	width: 25px;            
 	height: 25px;           
 	border: 1px solid black;
-    border-radius: 3px;
     float: left;
 }
 
@@ -65,10 +64,12 @@ button{
     font-size: 30px;
     margin-left:10px;
     float: right;
+    color: rgb(57,180,254);
 }
 .delete2{
     float: right;
     font-size: 30px;
+    color: rgb(57,180,254);
 }
 
 .checkbox:checked + .checkbox_custom::before {
@@ -81,4 +82,22 @@ button{
 	left: 2px;
 	background: #413548;
 
+}
+.second_form{
+    width:350px;
+    height: 40px;
+    float:left;
+}
+.save{
+    position: relative;
+    bottom: 2px;
+    font-size: 50px;
+    margin-left:10px;
+    color: rgb(57,180,254);
+}
+.edit_form{
+    display: flex;
+}
+.hidden{
+    display: none;
 }
