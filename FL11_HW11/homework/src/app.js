@@ -22,12 +22,17 @@ mainTaskButton.addEventListener('click', function () {
       queryNavigation.appendChild(firstline);
       document.querySelector('.main_form').value = '';
       deletebutton(firstline);
-      editbutton(firstline)
+      edutTask()
       minvalue++;
    } else {
       console.log('You create max value of action');
    }
-
+   let list = document.querySelector('ul');
+   list.addEventListener('click', function(ev) {
+     if (ev.target.tagName === 'LI') {
+       ev.target.classList.toggle('checked');
+     }
+   }, false);
 });
 
 function deletebutton(firstline) {
@@ -39,18 +44,37 @@ function deletebutton(firstline) {
    })
 }
 
-function editbutton(firstline) {
-   firstline.addEventListener('click', function () {
-      let inputValues = document.querySelector('.second_form').value;
-      let editLi = document.createElement('li');
-      editLi.classList.add('editmode')
-      editLi.innerHTML = `<input type="text" class="second_form">
-        <button class='material-icons save'>
-      <span class="label">${inputValues}</span>
-          <i class='material-icons'>save</i>
-        </button>`;
-      queryNavigation.appendChild(editLi);
-      document.querySelector('.main_form').value = '';
-   });
+// function editbutton(firstline) {
+//    firstline.addEventListener('click', function () {
+//       let inputValues = document.querySelector('.second_form').value;
+//       let editLi = document.createElement('li');
+//       editLi.classList.add('editmode')
+//       editLi.innerHTML = `<input type="text" class="second_form">
+//         <button class='material-icons save'>
+//       <span class="label">${inputValues}</span>
+//           <i class='material-icons'>save</i>
+//         </button>`;
+//       queryNavigation.appendChild(editLi);
+//       document.querySelector('.main_form').value = '';
+//    });
 
-}
+// }
+// function edutTask(){
+//    console.log(2);
+//    let editButton = this;
+//    let listItem = this.parentNode;
+//    let span = listItem.querySelector('span');
+//    let input = listItem.querySelector('input[type=text]');
+
+//    let containsClass= listItem.classList.contains('editMode');
+//    if(containsClass){
+//       span.innerHTML=input.value;
+//       editButton.className = 'edit';
+//       editButton.innerHTML ="<i class='material-icons>edit</i>";
+//    }else{
+//       input.value = span.innerText;
+//       editButton.className='material-icons save';
+//       editButton.innerHTML = "<i class='material-icons'>save</i>";
+//    }
+//    listItem.classList.toggle('editMode');
+// }
