@@ -34,13 +34,14 @@
   <!-- Main css -->
 
   <!-- Vendor Scripts -->
-  <script async src="js/jquery.js"></script>
+  <script defer src="js/jquery.js"></script>
   <script async src="js/bootstrap.min.js"></script>
   <script defer src="js/jquery.parallax.js"></script>
-  <script async src="js/smoothscroll.js"></script>
-  <script async src="js/lazyload.min.js"></script>
+  <script defer src="js/smoothscroll.js"></script>
+  <script defer src="js/lazyload.min.js"></script>
   <!-- Custom Scripts -->
   <script  defer src="js/custom.js"></script>
+
 
 </head>
 
@@ -106,14 +107,18 @@
           <div class="blog-post-thumb">
             <div class="blog-post-image">
               <a href="#">
-                <img class="img-responsive" src="img/blog-image1.jpg" alt="Blog Image">
+                <img class="lazy img-responsive" data-src="img/blog-image1.jpg"
+                data-srcset="img/blog-image1.jpg 1200w ,img/blog-image1-768px.jpg 768w"
+                data-sizes="100w" alt="Blog Image">
               </a>
             </div>
             <div class="blog-post-title">
               <h3><a href="#">We Help You To Make Front-end Great Again</a></h3>
             </div>
             <div class="blog-post-format">
-              <span><a href="#"><img src="img/author-image1.jpg" class="img-responsive img-circle">
+              <span><a href="#"><img data-src="img/author-image1.jpg"
+                data-srcset="img/author-image1.jpg 1200w , img/author-image1-768px.jpg 800w"
+                data-sizes="100w" class="lazy img-responsive img-circle">
                   Jen Lopez</a></span>
               <span><i class="fa fa-date"></i> July 22, 2017</span>
               <span><a href="#"><i class="fa fa-comment-o"></i> 35 Comments</a></span>
@@ -131,14 +136,18 @@
           <div class="blog-post-thumb">
             <div class="blog-post-image">
               <a href="#">
-                <img class="img-responsive" src="img/blog-image2.jpg" alt="Blog Image">
+                <img class="lazy img-responsive" data-src="img/blog-image2.jpg"
+                data-srcset="img/blog-image2.jpg 1200w , img/blog-image2-768px.jpg 768w"
+                data-sizes="100w" alt="Blog Image">
               </a>
             </div>
             <div class="blog-post-title">
               <h3><a href="#">In pretium tellus et ante accumsan</a></h3>
             </div>
             <div class="blog-post-format">
-              <span><a href="#"><img src="img/author-image2.jpg" class="img-responsive img-circle">
+              <span><a href="#"><img data-src="img/author-image2.jpg"
+                data-srcset="img/author-image2.jpg 1200w , img/author-image2-768px.jpg 768w" 
+                data-sizes="100w" class="lazy img-responsive img-circle">
                   Leo Dennis</a></span>
               <span><i class="fa fa-date"></i> June 10, 2017</span>
               <span><a href="#"><i class="fa fa-comment-o"></i> 48 Comments</a></span>
@@ -156,14 +165,18 @@
           <div class="blog-post-thumb">
             <div class="blog-post-image">
               <a href="#">
-                <img class="img-responsive" src="img/blog-image3.jpg" alt="Blog Image">
+                <img class="lazy img-responsive" data-src="img/blog-image3.jpg"
+                data-srcset="img/blog-image3.jpg 1200w , img/blog-image3-768px.jpg 768w" 
+                data-sizes="100w" alt="Blog Image">
               </a>
             </div>
             <div class="blog-post-title">
               <h3><a href="#">Nam interdum maximus dolor faucibus</a></h3>
             </div>
             <div class="blog-post-format">
-              <span><a href="#"><img src="img/author-image1.jpg" class="img-responsive img-circle">
+              <span><a href="#"><img data-src="img/author-image1.jpg" 
+                data-srcset="img/author-image1.jpg 1200w , img/author-image1-768px.jpg 768w" 
+                data-sizes="100w" class="lazy img-responsive img-circle">
                   Jen Lopez</a></span>
               <span><i class="fa fa-date"></i> May 30, 2017</span>
               <span><a href="#"><i class="fa fa-comment-o"></i> 63 Comments</a></span>
@@ -181,14 +194,18 @@
           <div class="blog-post-thumb">
             <div class="blog-post-image">
               <a href="#">
-                <img class="img-responsive" src="img/blog-image4.jpg" alt="Blog Image">
+                <img class="lazy img-responsive" data-src="img/blog-image4.jpg"
+                data-srcset="img/blog-image4.jpg 1200w , img/blog-image4-768px.jpg 768w" 
+                data-sizes="100w" alt="Blog Image">
               </a>
             </div>
             <div class="blog-post-title">
               <h3><a href="#">The ingredients that make a great burger</a></h3>
             </div>
             <div class="blog-post-format">
-              <span><a href="#"><img src="img/author-image2.jpg" class="img-responsive img-circle">
+              <span><a href="#"><img data-src="img/author-image2.jpg"
+                data-srcset="img/author-image2.jpg 1200w , img/author-image2-768px.jpg 768w" 
+                data-sizes="100w" class=" lazy img-responsive img-circle">
                   Leo Dennis</a></span>
               <span><i class="fa fa-date"></i> April 18, 2017</span>
               <span><a href="#"><i class="fa fa-comment-o"></i> 124 Comments</a></span>
@@ -206,14 +223,19 @@
           <div class="blog-post-thumb">
             <div class="blog-post-image">
               <a href="#">
-                <img class="img-responsive" src="img/blog-image5.jpg" alt="Blog Image">
+                <img class="lazy img-responsive" data-src="img/blog-image5.jpg"
+                data-srcset="img/blog-image5.jpg 1200w , img/blog-image5-768px.jpg 768w" 
+                data-sizes="100w" alt="Blog Image">
               </a>
             </div>
             <div class="blog-post-title">
               <h3><a href="#">Vestibulum vel mauris nec ex tempus</a></h3>
             </div>
             <div class="blog-post-format">
-              <span><a href="#"><img src="img/author-image1.jpg" class="img-responsive img-circle">
+              <span><a href="#"><img 
+                data-src="img/author-image1.jpg"
+                data-srcset="img/author-image1.jpg 1200w , img/author-image1-768px.jpg 768w" 
+                data-sizes="100w" class="lazy img-responsive img-circle">
                   Jen Lopez</a></span>
               <span><i class="fa fa-date"></i> March 12, 2017</span>
               <span><a href="#"><i class="fa fa-comment-o"></i> 256 Comments</a></span>
