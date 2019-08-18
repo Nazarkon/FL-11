@@ -11,7 +11,6 @@ function assign(target) {
 
         if (nextSource !== null && nextSource !== undefined) {
             for (let nextKey in nextSource) {
-                // Avoid bugs when hasOwnProperty is shadowed
                 if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
                     to[nextKey] = nextSource[nextKey];
                 }
@@ -20,7 +19,6 @@ function assign(target) {
     }
     return to;
 }
-
 const defaults = {
     a: 123,
     b: 777
@@ -28,5 +26,5 @@ const defaults = {
 const options = {
     a: 456
 };
-const configs = assign({}, defaults, options); // => {a: 456, b: 777}
+const configs = assign({}, defaults, options);
 console.log(configs)
