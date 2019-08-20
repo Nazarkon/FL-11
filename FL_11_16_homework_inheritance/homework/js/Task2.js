@@ -2,7 +2,7 @@
       if (typeof proto !== 'object' && typeof proto !== 'function') {
           throw new TypeError('Object prototype may only be an Object: ' + proto);
       } else if (proto === null) {
-          throw new Error("Doesn't support 'null' as the first argument.");
+          throw new Error("Doesn't support 'null' as the first arguments.");
       }
 
       if (typeof propertiesObject !== 'undefined') {
