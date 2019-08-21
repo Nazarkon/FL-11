@@ -1,4 +1,6 @@
-const NumberT ='0123456789';
-const ShownNumbers = NumberT.slice(-4);
-const newNumber = ShownNumbers.padStart(NumberT.length,'*');
-console.log(newNumber);
+let hoverNumber = (value) =>{
+    const ShownNumbers = value.slice(-4);
+    const newNumber = ShownNumbers.padStart(value.length,'*');
+    return newNumber;
+}
+console.log(hoverNumber('0123456789'));
