@@ -85,17 +85,16 @@ let add = (a, b = required()) => {
     return a + b;
 }
 console.log(add(1, 3));
-console.log(add(1));
 
 //Task8
-let fetchReturn = (url) => {
+let fetchReturn1 = (url) => {
     return fetch(url)
         .then(response => response.text())
         .then(data => JSON.parse(data))
         .then(sortarr => sortarr.sort((a, b) => {
             let nameA = a.name.toLowerCase(),
                 nameB = b.name.toLowerCase()
-            if (nameA < nameB) { //сортируем строки по возрастанию
+            if (nameA < nameB) {
                 return -1
             } else if (nameA > nameB) {
                 return 1
@@ -105,12 +104,11 @@ let fetchReturn = (url) => {
         .then(result => console.log(result))
         .catch(throwError => console.log('Incorrect url'));
 }
-fetchReturn('https://api.github.com/users/electricera/repos');
-fetchReturn('https://jsonplaceholder.typicode.com/users');
+fetchReturn1('https://jsonplaceholder.typicode.com/users');
 
 
 //Task9
-async function fetchReturn(url) {
+async function fetchReturn2(url) {
     try {
         let request = await fetch(url);
         let data = await request.text();
@@ -130,5 +128,4 @@ async function fetchReturn(url) {
         throw new Error('Incorect url')
     }
 }
-fetchReturn('https://api.github.com/users/electricera/repos');
-fetchReturn('https://jsonplaceholder.typicode.com/users');
+fetchReturn2('https://jsonplaceholder.typicode.com/users');
