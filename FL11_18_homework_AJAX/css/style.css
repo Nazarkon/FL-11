@@ -1,0 +1,13 @@
+p{
+    padding:0;
+    margin:0;
+    font-weight: 400;
+    margin:20px;
+    text-align: center;
+}
+.id_elem{
+    padding-right: 40px;
+}
+label{
+    margin-right: 30px;
+}
