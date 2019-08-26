@@ -38,7 +38,9 @@ function deletebutton(firstline) {
    let deletebutton = firstline.querySelector('.delete2');
    deletebutton.addEventListener('click', function () {
       let child = this.parentNode;
+      console.log(child)
       let parent = child.parentNode;
+      console.log(parent)
       parent.removeChild(child);
    })
 }

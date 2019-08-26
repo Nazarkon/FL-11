@@ -7,7 +7,7 @@ function callServer() {
     xhr.open('GET', 'https://jsonplaceholder.typicode.com/users', true);
     xhr.responseType = 'json';
     xhr.send();
-
+    let responceObj = xhr.response;
     xhr.onload = function () {
         if (xhr.status !== 200) {
             console.log('Connection Error!!!')
@@ -15,7 +15,6 @@ function callServer() {
             let responceObj = xhr.response;
             console.log(responceObj)
             createElement(responceObj);
-
         }
     }
 }
@@ -25,17 +24,46 @@ getBtn.addEventListener('click', function () {
     callServer();
 });
 
+function getResponseDelete(userId){
+    const request = new XMLHttpRequest();
+
+    request.open('DELETE', `https://jsonplaceholder.typicode.com/users/${userId}`);
+    request.send();
+    request.onload = function () {
+        if (request.status === 200) {
+            alert(`Deleted, ${request.status}`);
+          } else {
+            alert(request.statusText);
+          }
+    }
+    
+}
+
+function getResponseEdit(userid){
+    const request = new XMLHttpRequest();
+
+    request.open('PUT', `https://jsonplaceholder.typicode.com/users/${userId}`);
+    request.send();
+    request.onload = function () {
+        if (request.status === 200) {
+            alert(`Edited, ${request.status}`);
+          } else {
+            alert(request.statusText);
+          }
+    }
+    
+}
 function createElement(value) {
     let person = value;
     for (let i = 0; i < person.length; i++) {
         let newDiv = document.createElement('div');
-        newDiv.classList.add('li_container')
+        newDiv.setAttribute('class','li_elem1')
         let newli = document.createElement('li');
         newli.classList.add('li_elem');
-        newli.innerHTML = `<span class='unique_id' id='UID'>Id: ${person[i].id}</span> 
+        newli.innerHTML = `<span class='unique_id' id='${person[i].id}'>Id: ${person[i].id}</span> 
         <span>Name: ${person[i].name}</span>
-        <button class='deleteBtn'>Delete</button>
-        <button class='editBtn'>Edit</button>`
+        <button id='deleteBtn'>Delete</button>
+        <button id='editBtn'>Edit</button>`
         newDiv.appendChild(newli)
         list.appendChild(newDiv);
     }
@@ -46,19 +74,33 @@ function editButtons() {
     document.querySelector('ul').addEventListener('click', function (e) {
         const target = e.target;
         if (target.innerHTML === 'Delete') {
-            console.log('Delete')
-
+            let delBtn = document.querySelector('#deleteBtn');
+            let liElem =document.querySelector('.li_elem');
+            delBtn.addEventListener('click',function(){
+                const userId = liElem.firstChild.getAttribute('id');
+                console.log(delBtn)
+                let child  = this.parentNode;
+                console.log(child)
+                let parent = child.parentNode;
+                parent.removeChild(child);
+                getResponseDelete(userId);
+            })      
         }
 
         if (target.innerHTML === 'Edit') {
-            console.log('Edit')
-            createEdit()
+           let editBtn = document.getElementById('editBtn')
+           editBtn.addEventListener('click',function(){
+            console.log(editBtn)
+            let child  = this.parentNode;
+                let parent = child.parentNode;
+                console.log(parent)
+                createEditField(parent)
+           })
         }
     });
 }
 
-function createEdit() {
-
+function createEditField(value) {
     let editField = document.createElement('div');
     editField.classList.add('hover_div');
 
@@ -101,7 +143,6 @@ function createEdit() {
     emailField.appendChild(inputEmail)
     editField.appendChild(emailField);
     editField.appendChild(saveButton)
-    rootDiv.appendChild(editField)
+    value.appendChild(editField)
 
 }
-
