@@ -1,13 +1,14 @@
 let getBtn = document.getElementById('show_button');
 let rootDiv = document.getElementById('root');
 let list = document.getElementById('list');
+let spiner = document.getElementById('cube-loader');
+let postContainer = document.getElementById('post_list__items');
 
 function callServer() {
     let xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://jsonplaceholder.typicode.com/users', true);
     xhr.responseType = 'json';
     xhr.send();
-    let responceObj = xhr.response;
     xhr.onload = function () {
         if (xhr.status !== 200) {
             console.log('Connection Error!!!')
@@ -19,12 +20,27 @@ function callServer() {
     }
 }
 
-
+function callPost() {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts', true);
+    xhr.responseType = 'json';
+    xhr.send();
+    xhr.onload = function () {
+        if (xhr.status !== 200) {
+            console.log('Connect Error!!!')
+        } else {
+            let responceObj = xhr.response;
+            console.log(responceObj);
+            createPost(responceObj)
+        }
+    }
+}
 getBtn.addEventListener('click', function () {
     callServer();
 });
 
-function getResponseDelete(userId){
+function getResponseDelete(userId) {
+    showSpinner()
     const request = new XMLHttpRequest();
 
     request.open('DELETE', `https://jsonplaceholder.typicode.com/users/${userId}`);
@@ -32,75 +48,114 @@ function getResponseDelete(userId){
     request.onload = function () {
         if (request.status === 200) {
             alert(`Deleted, ${request.status}`);
-          } else {
+            hide()
+        } else {
             alert(request.statusText);
-          }
+        }
     }
-    
+
 }
 
-function getResponseEdit(userid){
+function getResponseEdit(userid) {
+    showSpinner()
     const request = new XMLHttpRequest();
 
     request.open('PUT', `https://jsonplaceholder.typicode.com/users/${userId}`);
     request.send();
     request.onload = function () {
         if (request.status === 200) {
+            hide()
             alert(`Edited, ${request.status}`);
-          } else {
+        } else {
             alert(request.statusText);
-          }
+        }
     }
-    
+
 }
+
+function createPost(value) {
+    let post = value;
+    for (let i = 0; i < post.length; i++) {
+        let newli = document.createElement('li');
+        newli.style.width = 250 + 'px';
+        newli.setAttribute('id', 'p__items');
+        let newSp = document.createElement('h1');
+        newSp.setAttribute('id', 'title');
+        newSp.style.fontSize = 20 + 'px';
+        newSp.style.textAlign = 'center';
+        newSp.innerHTML = `${post[0].title}`;
+        let secSp = document.createElement('p');
+        secSp.setAttribute('id', 'main__txt');
+        secSp.innerHTML = `${post[0].body}`
+
+        newli.appendChild(newSp);
+        newli.appendChild(secSp)
+        postContainer.appendChild(newli);
+
+    }
+}
+
 function createElement(value) {
     let person = value;
     for (let i = 0; i < person.length; i++) {
         let newDiv = document.createElement('div');
-        newDiv.setAttribute('class','li_elem1')
+        newDiv.setAttribute('id', 'li_elem1')
         let newli = document.createElement('li');
         newli.classList.add('li_elem');
-        newli.innerHTML = `<span class='unique_id' id='${person[i].id}'>Id: ${person[i].id}</span> 
-        <span>Name: ${person[i].name}</span>
-        <button id='deleteBtn'>Delete</button>
-        <button id='editBtn'>Edit</button>`
-        newDiv.appendChild(newli)
+        let delbtn = document.createElement('button')
+        delbtn.setAttribute('id', 'deleteBtn')
+        delbtn.innerHTML = 'Delete'
+        let edtBtn = document.createElement('button')
+        edtBtn.setAttribute('id', 'editBtn')
+        edtBtn.innerHTML = 'Edit'
+        let uName = document.createElement('span')
+        uName.innerHTML = ` Name:${person[i].name}`
+        uName.setAttribute('id', `name`);
+        newli.appendChild(uName);
+        let uId = document.createElement('span');
+        uId.innerHTML = ` id: ${person[i].id}`
+        uId.setAttribute('id', `${person[i].id}`)
+        newli.appendChild(uId)
+        newDiv.appendChild(newli);
+        newDiv.appendChild(delbtn);
+        newDiv.appendChild(edtBtn);
         list.appendChild(newDiv);
     }
     editButtons()
+    activePost()
+}
+
+function activePost() {
+    let name = document.getElementById('name');
+    name.addEventListener('click', function () {
+        list.style.display = 'none';
+        callPost()
+    })
 }
 
 function editButtons() {
-    document.querySelector('ul').addEventListener('click', function (e) {
-        const target = e.target;
-        if (target.innerHTML === 'Delete') {
-            let delBtn = document.querySelector('#deleteBtn');
-            let liElem =document.querySelector('.li_elem');
-            delBtn.addEventListener('click',function(){
-                const userId = liElem.firstChild.getAttribute('id');
-                console.log(delBtn)
-                let child  = this.parentNode;
-                console.log(child)
+    document.querySelector('ul').addEventListener('click', function () {
+        let delBtn = document.getElementById('deleteBtn');
+        if (delBtn.innerHTML === 'Delete') {
+            let liElem = document.querySelector('#li_elem1');
+            delBtn.addEventListener('click', function () {
+                const userId = liElem.firstChild.getAttribute('id')
+                let child = this.parentNode;
                 let parent = child.parentNode;
                 parent.removeChild(child);
                 getResponseDelete(userId);
-            })      
+            })
         }
-
-        if (target.innerHTML === 'Edit') {
-           let editBtn = document.getElementById('editBtn')
-           editBtn.addEventListener('click',function(){
-            console.log(editBtn)
-            let child  = this.parentNode;
-                let parent = child.parentNode;
-                console.log(parent)
-                createEditField(parent)
-           })
+        let editBtn = document.getElementById('editBtn')
+        if (editBtn.innerHTML === 'Edit') {
+            editBtn.addEventListener('click', function () {
+                createEditField(userId);
+            })
         }
     });
 }
 
-function createEditField(value) {
+function createEditField(el) {
     let editField = document.createElement('div');
     editField.classList.add('hover_div');
 
@@ -143,6 +198,15 @@ function createEditField(value) {
     emailField.appendChild(inputEmail)
     editField.appendChild(emailField);
     editField.appendChild(saveButton)
-    value.appendChild(editField)
+    document.getElementById(el).appendChild(editField)
 
+}
+
+function showSpinner() {
+
+    spiner.style.display = 'block';
+}
+
+function hide() {
+    spiner.style.display = 'none';
 }
