@@ -39,6 +39,21 @@ function callPost() {
         }
     }
 }
+// function callComments(){
+//     let xhr = new XMLHttpRequest();
+//     xhr.open('GET', 'https://jsonplaceholder.typicode.com/comments', true);
+//     xhr.responseType = 'json';
+//     xhr.send();
+//     xhr.onload = function () {
+//         if (xhr.status !== 200) {
+//             console.log('Connect Error!!!')
+//         } else {
+//             let responceObj = xhr.response;
+//             alert(`Done,${xhr.status}`);
+//             hide();
+//         }
+//     } 
+// }
 getBtn.addEventListener('click', function () {
     callServer();
 });
@@ -87,10 +102,10 @@ function createPost(value) {
         newSp.setAttribute('id', 'title');
         newSp.style.fontSize = 20 + 'px';
         newSp.style.textAlign = 'center';
-        newSp.innerHTML = `${post[0].title}`;
+        newSp.innerHTML = `${post[i].title}`;
         let secSp = document.createElement('p');
         secSp.setAttribute('id', 'main__txt');
-        secSp.innerHTML = `${post[0].body}`
+        secSp.innerHTML = `${post[i].body}`
 
         newli.appendChild(newSp);
         newli.appendChild(secSp)
@@ -101,6 +116,7 @@ function createPost(value) {
 
 function createElement(value) {
     let person = value;
+
     for (let i = 0; i < person.length; i++) {
         let newDiv = document.createElement('div');
         newDiv.setAttribute('id', 'li_elem1')
@@ -133,7 +149,8 @@ function activePost() {
     let name = document.getElementById('name');
     name.addEventListener('click', function () {
         list.style.display = 'none';
-        callPost()
+        callPost();
+        // callComments();
     })
 }
 
