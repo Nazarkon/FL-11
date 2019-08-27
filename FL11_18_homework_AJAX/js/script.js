@@ -75,16 +75,17 @@ function getResponseDelete(userId) {
 
 }
 
-function getResponseEdit(userid) {
+function getResponseEdit(userId) {
     showSpinner()
     const request = new XMLHttpRequest();
 
-    request.open('PUT', `https://jsonplaceholder.typicode.com/users/${userId}`);
+    request.open('PUT', 'https://jsonplaceholder.typicode.com/users/' + userId,true);
     request.send();
     request.onload = function () {
         if (request.status === 200) {
             hide()
             alert(`Edited, ${request.status}`);
+            console.log(target.parentElement)
         } else {
             alert(request.statusText);
         }
@@ -123,26 +124,28 @@ function createElement(value) {
         let newli = document.createElement('li');
         newli.classList.add('li_elem');
         let delbtn = document.createElement('button')
-        delbtn.setAttribute('id', 'deleteBtn')
+        delbtn.setAttribute('class', 'deleteBtn')
         delbtn.innerHTML = 'Delete'
         let edtBtn = document.createElement('button')
-        edtBtn.setAttribute('id', 'editBtn')
+        edtBtn.setAttribute('class', 'editBtn')
         edtBtn.innerHTML = 'Edit'
-        let uName = document.createElement('span')
-        uName.innerHTML = ` Name:${person[i].name}`
-        uName.setAttribute('id', `name`);
-        newli.appendChild(uName);
         let uId = document.createElement('span');
         uId.innerHTML = ` id: ${person[i].id}`
         uId.setAttribute('id', `${person[i].id}`)
+        let uName = document.createElement('span')
+        uName.innerHTML = ` Name:${person[i].name}`
+        uName.setAttribute('id', `name`);
+
         newli.appendChild(uId)
+        newli.appendChild(uName);
         newDiv.appendChild(newli);
         newDiv.appendChild(delbtn);
         newDiv.appendChild(edtBtn);
         list.appendChild(newDiv);
     }
-    editButtons()
-    activePost()
+    deleteButton();
+    editButton();
+    activePost();
 }
 
 function activePost() {
@@ -154,73 +157,70 @@ function activePost() {
     })
 }
 
-function editButtons() {
-    document.querySelector('ul').addEventListener('click', function () {
-        let delBtn = document.getElementById('deleteBtn');
-        if (delBtn.innerHTML === 'Delete') {
+function deleteButton() {
+    list.addEventListener('mouseover', function (event) {
+        const target = event.target;
+        let delBtn = document.querySelectorAll('.deleteBtn');
+        if (target.innerHTML === 'Delete') {
             let liElem = document.querySelector('#li_elem1');
-            delBtn.addEventListener('click', function () {
+            target.addEventListener('click', function () {
                 const userId = liElem.firstChild.getAttribute('id')
                 let child = this.parentNode;
                 let parent = child.parentNode;
                 parent.removeChild(child);
                 getResponseDelete(userId);
-            })
-        }
-        let editBtn = document.getElementById('editBtn')
-        if (editBtn.innerHTML === 'Edit') {
-            editBtn.addEventListener('click', function () {
-                createEditField(userId);
-            })
+            });
         }
     });
 }
 
-function createEditField(el) {
-    let editField = document.createElement('div');
-    editField.classList.add('hover_div');
+function editButton() {
+    list.addEventListener('mouseover', function (event) {
+        const target = event.target;
+        const spawn = target.parentElement
+        const userid = target.parentElement.firstChild.firstChild.getAttribute('id');
+        console.log(userid)
+        let editBtn = document.querySelectorAll('.editBtn')
+            target.addEventListener('click', function () {
+                if(target.innerHTML === 'Edit'){
+                createField(spawn);
+                }
+                savebutton(userid);
+            });
+        });
+    }
 
-    let idField = document.createElement('div');
-    let title = document.createElement('label');
-    title.innerHTML = 'id'
-    let input = document.createElement('input');
 
-    idField.appendChild(title)
-    idField.appendChild(input)
-    editField.appendChild(idField);
 
-    let nameField = document.createElement('div');
-    let nameTitle = document.createElement('label');
-    nameTitle.innerHTML = 'name'
+
+
+function createField(value) {
+    let Newform = document.createElement('form');
     let inputName = document.createElement('input');
+    let nameLabel = document.createElement('label');
+    nameLabel.innerHTML = 'Name:'
+    let inputUserName = document.createElement('input');
+    let UserName = document.createElement('label');
+    UserName.innerHTML = 'Username'
+     let saveBtn = document.createElement('input');
+    saveBtn.setAttribute('type', 'button');
+    saveBtn.value = 'Save changes';
+    saveBtn.setAttribute('id', 'savebtn')
 
-    nameField.appendChild(nameTitle)
-    nameField.appendChild(inputName)
-    editField.appendChild(nameField);
-
-    let usernameField = document.createElement('div');
-    let usernameTitle = document.createElement('label');
-    usernameTitle.innerHTML = 'username'
-    let inputUsername = document.createElement('input');
-
-    usernameField.appendChild(usernameTitle)
-    usernameField.appendChild(inputUsername)
-    editField.appendChild(usernameField);
-
-    let emailField = document.createElement('div');
-    let emailTitle = document.createElement('label');
-    emailTitle.innerHTML = 'Email'
-    let inputEmail = document.createElement('input');
-
-    let saveButton = document.createElement('button');
-    saveButton.classList.add('saveBtn')
-    saveButton.innerHTML = 'Save changes';
-    emailField.appendChild(emailTitle)
-    emailField.appendChild(inputEmail)
-    editField.appendChild(emailField);
-    editField.appendChild(saveButton)
-    document.getElementById(el).appendChild(editField)
-
+    Newform.appendChild(nameLabel);
+    Newform.appendChild(inputName);
+    Newform.appendChild(UserName);
+    Newform.appendChild(inputUserName);
+    Newform.appendChild(saveBtn);
+    value.appendChild(Newform);
+}
+function savebutton(value){
+    let userID = value;
+    let savebtn = document.getElementById('savebtn');
+    savebtn.addEventListener('click',function(){
+    
+        getResponseEdit(userID);
+    })
 }
 
 function showSpinner() {
