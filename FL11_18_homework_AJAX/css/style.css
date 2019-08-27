@@ -11,12 +11,18 @@ p{
 label{
     margin-right: 30px;
 }
+#post_list{
+    width: 400px;
+}
 #cube-loader {
     align-items: center;
     display: flex;
     height: 100%;
     width: 100%;
-    position: fixed;
+    position: absolute;
+    top:2%;
+    right:5%;
+    left:0%;
     display: none;
   }
   #cube-loader .caption {

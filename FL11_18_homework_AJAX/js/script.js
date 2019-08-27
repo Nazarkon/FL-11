@@ -5,6 +5,7 @@ let spiner = document.getElementById('cube-loader');
 let postContainer = document.getElementById('post_list__items');
 
 function callServer() {
+    showSpinner()
     let xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://jsonplaceholder.typicode.com/users', true);
     xhr.responseType = 'json';
@@ -14,13 +15,15 @@ function callServer() {
             console.log('Connection Error!!!')
         } else {
             let responceObj = xhr.response;
-            console.log(responceObj)
+            alert(`Done,${xhr.status}`)
+            hide();
             createElement(responceObj);
         }
     }
 }
 
 function callPost() {
+    showSpinner()
     let xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts', true);
     xhr.responseType = 'json';
@@ -30,7 +33,8 @@ function callPost() {
             console.log('Connect Error!!!')
         } else {
             let responceObj = xhr.response;
-            console.log(responceObj);
+            alert(`Done,${xhr.status}`);
+            hide();
             createPost(responceObj)
         }
     }
