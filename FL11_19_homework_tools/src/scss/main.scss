@@ -1,0 +1,10 @@
+@import './variables.scss';
+
+h1{
+    color:$main-color;
+}
+.wrapper1{
+    width:200px;
+    height: 200px;
+    background-color: $second-color;
+}
