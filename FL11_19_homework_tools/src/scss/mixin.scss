@@ -1,0 +1,10 @@
+@mixin flexOptions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:$containerWidth;
+    height:$containerHeight;
+    background-color:$containerColor;
+    margin-left:auto;
+    margin-right: auto;
+}

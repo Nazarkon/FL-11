@@ -1,10 +1,35 @@
 @import './variables.scss';
+@import './mixin.scss';
+@import url('https://fonts.googleapis.com/css?family=Manjari&display=swap');
 
-h1{
-    color:$main-color;
+body{
+    font-family: 'Manjari', sans-serif;
 }
-.wrapper1{
-    width:200px;
-    height: 200px;
-    background-color: $second-color;
+#battle{
+    @include flexOptions;
+}
+.field1,.field2{
+    width: $battlefieldWidth;
+    height:$battlefieldHeight;
+    background-color: $fieldColor;
+}
+.battlelog{
+    width: $battlefieldWidth;
+    height:$battlefieldHeight;
+    background-color: $fieldColor;
+}
+#battle_buttons{
+    @include flexOptions;
+}
+.button{
+    width:$buttonWidth;
+    height:$buttonHeight;
+    font-size: $textSize;
+    color:$textColor;
+    border:0;
+    background-color:$buttonsColor;
+    border-radius:$buttonsRadious;
+}
+.button:hover{
+    background-color: $buttonHover;
 }
