@@ -11,4 +11,5 @@ battleContainer.appendChild(battleField2)
 
 let battlelog = document.createElement('div');
 battlelog.setAttribute('class', 'battlelog');
+battlelog.setAttribute('id', 'battlelog');
 battleContainer.appendChild(battlelog);
