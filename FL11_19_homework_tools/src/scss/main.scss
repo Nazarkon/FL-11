@@ -23,6 +23,7 @@ body{
 }
 #battle_buttons{
     @include flexOptions;
+    flex-wrap: wrap;
 }
 .button{
     width:$buttonWidth;
@@ -47,4 +48,8 @@ body{
     text-align: center;
     color:white;
     margin-bottom: 30px;
+}
+.res{
+    margin-top: 90px;
+    text-align: center;
 }
