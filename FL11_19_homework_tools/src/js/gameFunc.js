@@ -7,12 +7,14 @@ let battleLog = document.getElementById('battlelog');
 let btnReset = document.getElementById('reset-button');
 let choiceStack = ['paper', 'rock', 'scissors'];
 let checkTry = 0;
+let Loses = 0;
+let Wins = 0;
 
-btnReset.addEventListener('click',function(){
-    checkTry=0;
+btnReset.addEventListener('click', function () {
+    checkTry = 0;
     battleField1.innerHTML = '';
     battleField2.innerHTML = '';
-    battleLog.innerHTML='';
+    battleLog.innerHTML = '';
 })
 btnPaper.addEventListener('click', function () {
     console.log(choiceStack[0]);
@@ -45,47 +47,63 @@ btnScisor.addEventListener('click', function () {
 });
 
 function checkResult(userChoice, computerChoice) {
-    if(checkTry < 3){
+    if (checkTry <= 2) {
         if (userChoice === computerChoice) {
             battleLog.innerHTML = `<p class='res'>Oh!!You Tie!</p>`;
-            checkTry+=1;
+            checkTry += 1;
+
         } else if (userChoice === 'paper' && computerChoice === 'rock') {
             battleLog.innerHTML = `<p class='res'>You win!${userChoice} better ${computerChoice}</p>`;
-            checkTry+=1;
+            checkTry += 1;
             console.log("You win!");
+            Wins += 1;
         } else if (userChoice === 'rock' && computerChoice === 'scissors') {
             battleLog.innerHTML = `<p class='res'>You win!${userChoice} better ${computerChoice}</p>`;
-            checkTry+=1;
+            checkTry += 1;
             console.log("You win!");
+            Wins += 1;
         } else if (userChoice === 'scissors' && computerChoice === 'rock') {
             battleLog.innerHTML = `<p class='res'>You lose!${computerChoice} better ${userChoice}</p>`;
             checkTry += 1;
             console.log("You lose!");
+            Loses += 1;
         } else if (userChoice === 'rock' && computerChoice === 'paper') {
             battleLog.innerHTML = `<p class='res'>You lose!${computerChoice} better ${userChoice}</p>`;
             checkTry += 1;
+            Loses += 1;
             console.log("You lose!");
         } else if (userChoice === 'paper' && computerChoice === 'scissors') {
             battleLog.innerHTML = `<p class='res'>You lose!${computerChoice} better ${userChoice}</p>`;
             checkTry += 1;
+            Loses += 1;
             console.log("You lose!");
         } else if (userChoice === 'scissors' || computerChoice === 'paper') {
             battleLog.innerHTML = `<p class='res'>You win!${userChoice} better ${computerChoice}</p>`;
             checkTry += 1;
             console.log("You win!");
+            Wins += 1;
         }
-    }else{
-        alert('Sorry Game Ends');
-        // doYouWannaPlay();
+    } else {
+        showResult();
+        alert("Game End")
     }
 }
-// function doYouWannaPlay(){
-//     let question = confirm("Do you wanna play more?");
-//     if(question == true){
-//        alert("Okey Let's go again");
-//        checkTry = 0;
-//     }else if(question == false){
-//         alert('Why you sooo boring....');
-//     }
 
-// }
+function showResult() {
+    let countLoses = Loses;
+    let countWins = Wins;
+    if (countLoses > countWins) {
+        battleLog.innerHTML = `<p class='res'>Result: You lose! Loser</p>`;
+        battleField1.innerHTML = '';
+        battleField2.innerHTML = '';
+    } else if (countLoses < countWins) {
+        battleLog.innerHTML = `<p class='res'>Result: You Win!Pretty boy</p>`;
+        battleField1.innerHTML = '';
+        battleField2.innerHTML = '';
+    } else {
+        battleLog.innerHTML = `<p class='res'>Result: Are you kidding me!It's Tie((</p>
+            <p style='text-align:center font-size:30px;'>Jesus</p>`;
+        battleField1.innerHTML = '';
+        battleField2.innerHTML = '';
+    }
+}
