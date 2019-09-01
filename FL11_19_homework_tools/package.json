@@ -1,9 +1,9 @@
 {
-  "name": "Game",
+  "name": "game",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "dev": "webpack-dev-server --open --mode development",
+    "Serve": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production"
   },
   "browserList": [
@@ -20,12 +20,14 @@
     "css-loader": "^3.2.0",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
+    "eslint": "^6.3.0",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
     "path": "^0.12.7",
     "postcss-loader": "^3.0.0",
+    "prettier": "1.18.2",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.39.3",
