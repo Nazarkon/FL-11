@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import ArticleTitle from './components/article.module';
+import ListContainer from './components/aside.module';
+import CardContainer from './components/card-container';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const Container = () =>{
+    return (
+        <div className='container d-flex'>
+        <div className = 'row col-12'>
+            <ArticleTitle />
+            <ListContainer /> 
+            <CardContainer />
+        </div>
+        </div>
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+    );
+}
+
+ReactDOM.render(<Container />,document.getElementById('root'));
