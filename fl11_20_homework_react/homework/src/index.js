@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ArticleTitle from './components/article.module';
-import ListContainer from './components/aside.module';
-import CardContainer from './components/card-container';
+import ArticleTitle from './components/article.component.js';
+import ListContainer from './components/aside.component.js';
+import CardContainer from './components/card-container.component.js';
+
+import './components/article.component.scss';
 
 const Container = () =>{
     return (
@@ -17,4 +19,5 @@ const Container = () =>{
     );
 }
 
-ReactDOM.render(<Container />,document.getElementById('root'));
+
+ReactDOM.render(<Container />,document.getElementById('root'))

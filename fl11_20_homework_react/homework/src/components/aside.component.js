@@ -1,5 +1,6 @@
 import React from 'react';
 import ListItem from './aside-list.component';
+import './aside-list.component.scss';
 
 const ListContainer = () =>{
     return (

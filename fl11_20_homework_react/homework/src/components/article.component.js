@@ -1,7 +1,7 @@
 import React from 'react';
-import './container.css';
-import './article.css';
-import SubmitButton from './button.module';
+import './article.component.scss';
+import './container.component.scss';
+import SubmitButton from './button.component';
 
 const ArticleTitle = () =>{
     return (
