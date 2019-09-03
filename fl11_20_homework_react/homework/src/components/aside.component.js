@@ -4,7 +4,7 @@ import './aside-list.component.scss';
 
 const ListContainer = () =>{
     return (
-        <div className='aside col-3'>
+        <div className='aside col-3' id='aside'>
         <h3>Basket</h3>
           <ListItem /> 
         </div>         

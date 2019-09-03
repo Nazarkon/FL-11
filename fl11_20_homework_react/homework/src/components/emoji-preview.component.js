@@ -7,7 +7,7 @@ function EmojiCard(props){
     const [value] = React.useState(5);
 
     return (
-        <div className="card col-3" id={props.id}>
+        <div className="card col-3" key={props.id}>
                 <div>
                     <span role='img' aria-labelledby='emoji' className ='image1'>{props.icon1}</span>
                     <span role='img' aria-labelledby='emoji' className ='image2'>{props.icon2}</span>
@@ -20,10 +20,9 @@ function EmojiCard(props){
                     <Rating value={value} readOnly />
                     </Box>
                     </div>
-                   <SubmitButton  text = {props.price} />
+                   <SubmitButton onClick={props.title} text = {props.price} />
                 </div>
                 </div>
     )
 }
-
 export default EmojiCard;

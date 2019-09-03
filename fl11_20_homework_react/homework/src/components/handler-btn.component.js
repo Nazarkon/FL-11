@@ -1,22 +1,9 @@
-class FirePlace extends React.Component {
-    constructor(props) {
-      super(props);
-      this.Clicked = this.Clicked.bind(this);
-    }
-  
-    onSetFire() {
-      this.setState({isBurning: true});
-    }
-  
-    onSnuffOut() {
-      this.setState({isBurning: false});
-    }
-  
-    render() {
-     
-    }
-  }
-  
-  
-  ReactDOM.render(<FirePlace />,  document.getElementById('root'));
-  
+import React from 'react';
+
+const CreateElem = () =>{
+    return (
+        <li>Sorry,too stupid for this thing!</li>
+    );
+}
+
+export default CreateElem;

@@ -25,6 +25,8 @@ import EmojiPreview from './emoji-preview.component.js'
     }
         return this.state.emoji.map(emoji => {
             return (
+                <>
+                {console.log(emoji.id)}
               <EmojiPreview 
                 id = {emoji.id}
                 icon1 = {emoji.emoji[0].char}
@@ -33,6 +35,7 @@ import EmojiPreview from './emoji-preview.component.js'
                 title = {emoji.title}
                 price = {emoji.price}
                 />
+                </>
                
         )
         })
