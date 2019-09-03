@@ -1,12 +1,13 @@
 import React from 'react';
-import Emoji from '../emoji/emoji-preview/emoji.component.js';
+import PersonList from './emoji-card.component.js'
+import './card-container.component.scss'
 
 const CardContainer = () =>{
 
     return (
-        <div className = 'card-container col-9'><h1>Hello</h1>
-        <Emoji />
-        </div>
+        <div className = 'card-container col-9'>
+          <PersonList />
+           </div>
     );
 }
 
