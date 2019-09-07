@@ -7,13 +7,16 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { MoreinfoComponent } from './moreinfo/moreinfo.component';
 import { CreateinfoComponent } from './createinfo/createinfo.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms'; 
+import { SearchPipe } from './homepage/search.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
     MoreinfoComponent,
-    CreateinfoComponent
+    CreateinfoComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { RouterModule } from '@angular/router';
         path:'createinfo',
         component:CreateinfoComponent
       },
-    ])
+    ]),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

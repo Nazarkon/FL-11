@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataService } from './data.service'; 
+import { NewsService } from './homepage/news.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +7,6 @@ import { DataService } from './data.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- 
+
+  
 }

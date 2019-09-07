@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
+import { NewsService } from './news.service';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -7,8 +7,8 @@ import { DataService } from '../data.service';
 })
 export class HomepageComponent implements OnInit {
   myArr = [];
-  private name: string;
-  constructor(private data: DataService) { }
+  searchStr = '';
+  constructor(private data: NewsService) { }
   ngOnInit(): void {
   this.myArr = this.data.getData();
   }

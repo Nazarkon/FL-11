@@ -7,7 +7,7 @@
          <option value='anomal'>Animal</option>
       </select>
       <form>
-        <input type="text" placeholder="Enter what you looking for?">
+        <input type="text" placeholder="Enter what you looking for?" [(ngModel)] = "searchStr" name="something">
         <input type="submit" value="submit" value="Filter">
       </form>
       <button class="article_btn" routerLink="/createinfo">Add Article</button>
@@ -15,7 +15,7 @@
   </header>
   
   <div class="container">
-      <div *ngFor = "let arr of myArr" class="card__cont">
+      <div *ngFor = "let arr of myArr | search:searchStr" class="card__cont">
         <div class="description">
           <div class="photo">
             <!-- <img ng-src="{{arr.imageUrl}}"> -->
