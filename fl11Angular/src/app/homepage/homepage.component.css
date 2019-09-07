@@ -1,0 +1,57 @@
+h1{
+    margin: 0;
+}
+.header{
+    width:1200px;
+    height:50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: gray;
+    text-align: center;
+    color:white;
+}
+.menu__items{
+    width: 1200px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #D1D2D4;
+}
+.container{
+    width:1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.photo{
+  width:150px;
+  height: 150px;
+  background-color: blue;
+  margin-top:50px;
+}
+.card__cont{
+    width:800px;
+    height: 230px;
+    background-color: gray;
+    color:white;
+    list-style-type: none;
+    margin-bottom:30px;
+    display: flex;
+    justify-content: space-between;
+}
+.description{
+    display: flex;
+    justify-content: space-around;
+    width:850px;
+}
+.description_text{
+    width:350px;
+}
+.description_title{
+    margin-top:50px; 
+}

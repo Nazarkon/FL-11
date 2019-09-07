@@ -1,0 +1,34 @@
+<header class='header'>
+    <h1>MyNews</h1>
+    <div class='menu__items'>
+      <select>
+         <option value='nature'>Nature</option>
+         <option value='city'>City News</option>
+         <option value='anomal'>Animal</option>
+      </select>
+      <form>
+        <input type="text" placeholder="Enter what you looking for?">
+        <input type="submit" value="submit" value="Filter">
+      </form>
+      <button class="article_btn" routerLink="/createinfo">Add Article</button>
+    </div>
+  </header>
+  
+  <div class="container">
+      <div *ngFor = "let arr of myArr" class="card__cont">
+        <div class="description">
+          <div class="photo">
+            <!-- <img ng-src="{{arr.imageUrl}}"> -->
+          </div>
+          <div class="description_text">
+            <h3 class="description_title">{{arr.title}}</h3>
+            <p class="short_description">{{arr.desc}}</p>
+            <a routerLink="/moreinfo">Read more...</a>
+          </div>
+        </div>
+        <p>Date:{{arr.date}} Time: {{arr.time}}</p>
+      </div>
+  </div>
+  <div id="container">
+    <router-outlet></router-outlet>
+  </div>

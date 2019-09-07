@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "fl11Angular": {
+    "App": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/fl11Angular",
+            "outputPath": "dist/App",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "fl11Angular:build"
+            "browserTarget": "App:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "fl11Angular:build:production"
+              "browserTarget": "App:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "fl11Angular:build"
+            "browserTarget": "App:build"
           }
         },
         "test": {
@@ -111,15 +111,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "fl11Angular:serve"
+            "devServerTarget": "App:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "fl11Angular:serve:production"
+              "devServerTarget": "App:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "fl11Angular"
+  "defaultProject": "App"
 }

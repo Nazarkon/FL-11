@@ -1,16 +1,37 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { MoreinfoComponent } from './moreinfo/moreinfo.component';
+import { CreateinfoComponent } from './createinfo/createinfo.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomepageComponent,
+    MoreinfoComponent,
+    CreateinfoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot([
+      {
+        path:'',
+        component:HomepageComponent
+      },
+      {
+        path:'moreinfo',
+        component:MoreinfoComponent
+      },
+      {
+        path:'createinfo',
+        component:CreateinfoComponent
+      },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
