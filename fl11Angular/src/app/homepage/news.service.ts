@@ -1,16 +1,28 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
 
 @Injectable({
   providedIn: 'root'
 })
 export class NewsService{
 
-    getData() : any[]{
-        return [
-          {'id':'1','title':'Nature news', 'desc':'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.', 'date':'24/09/2021','time':'12:15', 'imageUrl':'../img/nature.jpg'},
-          {'id':'2','title':'City News', 'desc':'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.', 'date':'12/06/2019','time':'10:25', 'imageUrl':'../img/City.png'},
-          {'id':'3','title':'Animal', 'desc':'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.', 'date':'5/10/2017','time':'15:35','imageUrl':'../img/Dog.jpg'},
-          {'id':'4','title':'Last News', 'desc':'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.', 'date':'5/11/2012','time':'16:35','imageUrl':'../img/Dog.jpg'},
-        ]
-     }
+  constructor(private http:HttpClient){
+
+  }
+
+  public MyArr = [];
+
+  getData(){
+    const url = 'https://newsapi.org/v2/top-headlines?country=ua&apiKey=2847ff53aeb442f09914a2a8c1aa69d6';
+    this.http.get(url).subscribe(response => {
+      return this.transformResponse(response);
+    })
+  }
+  transformResponse(res) {
+    const result = [];
+    if (res.hasOwnProperty('articles')) {
+      result.push(res.articles);
+    }
+    this.MyArr = result[0];
+  }
 }

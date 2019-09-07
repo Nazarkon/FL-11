@@ -18,7 +18,7 @@ h1{
     align-items: center;
     background-color: #D1D2D4;
 }
-.container{
+ .container{
     width:1200px;
     margin-left: auto;
     margin-right: auto;
@@ -28,15 +28,14 @@ h1{
     align-items: center;
     flex-direction: column;
 }
-.photo{
+.photo img{
   width:150px;
   height: 150px;
-  background-color: blue;
   margin-top:50px;
 }
 .card__cont{
-    width:800px;
-    height: 230px;
+    width:850px;
+    height:300px;
     background-color: gray;
     color:white;
     list-style-type: none;
@@ -54,4 +53,4 @@ h1{
 }
 .description_title{
     margin-top:50px; 
-}
+} 

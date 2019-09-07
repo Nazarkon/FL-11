@@ -6,11 +6,10 @@ import { NewsService } from './news.service';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-  myArr = [];
   searchStr = '';
   constructor(private data: NewsService) { }
   ngOnInit(): void {
-  this.myArr = this.data.getData();
+  this.data.getData();
   }
 
 }

@@ -1,1 +1,28 @@
-<p>createinfo works!</p>
+<div class="container">
+    <div class="head">
+      <h3>Create News</h3>
+    </div>
+    <div class="add__form">
+      <div class="input_left">
+        <label for="heading">Heading</label>
+        <input type="text" name="heading" [(ngModel)]="title">
+        <label for="Short_desctiption">Short description</label>
+        <input type="text" name="Short_desctiption"[(ngModel)]="description" >
+        <label for="context">Context</label>
+        <textarea name="context" cols="30" rows="10" [(ngModel)]="comment"></textarea>
+      </div>
+      <div class="input_right">
+          <label for="date">Date</label>
+          <input type="date" name="date" [(ngModel)]="date" >
+          <label for="author">Author</label>
+          <input type="text" name="author" [(ngModel)]="author">
+          <label for="url">Url</label>
+          <input type="text" name="url" [(ngModel)]="url">
+      <div class="input_btn">
+          <input type="submit" value="Save" (click)="search()">
+          <input type="button" routerLink="/" value="Cancel">
+      </div>
+      </div>
+    </div>
+  </div>
+  

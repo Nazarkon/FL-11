@@ -4,8 +4,8 @@ import { Pipe, PipeTransform } from '@angular/core';
     name:'search'
 })
 export class SearchPipe implements PipeTransform{
-    transform(myArr,value){
-       return myArr.filter(title => {
+    transform(MyArr,value){
+       return MyArr.filter(title => {
            return title.title.includes(value)
        })
     }

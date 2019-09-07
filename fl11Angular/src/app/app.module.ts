@@ -8,6 +8,7 @@ import { MoreinfoComponent } from './moreinfo/moreinfo.component';
 import { CreateinfoComponent } from './createinfo/createinfo.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms'; 
+import { HttpClientModule } from '@angular/common/http';
 import { SearchPipe } from './homepage/search.pipe';
 
 @NgModule({
@@ -21,6 +22,7 @@ import { SearchPipe } from './homepage/search.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path:'',
