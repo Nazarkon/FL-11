@@ -1,1 +1,18 @@
-<p>moreinfo works!</p>
+    <div class="head">
+      <h3>More info</h3>
+    </div>
+    <div class="container">
+        <div *ngFor = "let arr of data.MyArr " class="card__cont">
+          <div class="description">
+            <div class="photo">
+                <img src="{{arr.urlToImage}}" alt="Image">
+            </div>
+            <div class="description_text">
+              <h3 class="description_title">{{arr.title}}</h3>
+              <p class="short_description">{{arr.description}}</p>
+              <p>{{arr.author}}</p>
+            </div>
+          </div>
+          <p>{{arr.publishedAt}} </p>
+        </div>
+    </div>

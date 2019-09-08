@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsService } from '../homepage/news.service';
 
 @Component({
   selector: 'app-moreinfo',
@@ -7,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoreinfoComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private data: NewsService) { }
+  ngOnInit(): void {
+  this.data.getData();
   }
-
 }

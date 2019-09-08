@@ -10,6 +10,8 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms'; 
 import { HttpClientModule } from '@angular/common/http';
 import { SearchPipe } from './homepage/search.pipe';
+import { NewsService } from './homepage/news.service';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { SearchPipe } from './homepage/search.pipe';
     HomepageComponent,
     MoreinfoComponent,
     CreateinfoComponent,
-    SearchPipe
+    SearchPipe,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,7 @@ import { SearchPipe } from './homepage/search.pipe';
     ]),
     FormsModule,
   ],
-  providers: [],
+  providers: [NewsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
