@@ -7,6 +7,7 @@ import { NewsService } from './news.service';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
+  public newArr :[];
   searchStr = '';
   nature:string;
   politic:string;
@@ -19,7 +20,6 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
   this.data.getData();
   this.author = "24tv.ua";
-
   }
    customFunction(val:any){
      
