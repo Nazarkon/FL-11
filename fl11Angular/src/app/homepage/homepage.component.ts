@@ -23,8 +23,9 @@ export class HomepageComponent implements OnInit {
   }
    customFunction(val:any){
      
-    this.midify = `Value  ${this.MyArr}`
-    console.log(this.midify)
+    this.midify = `Value  ${this.author}`
+    console.log(this.midify);
+    alert('Я не зумів доступитись до масиву,щоб його фільтрувати(((')
   }
 
 }
