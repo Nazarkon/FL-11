@@ -53,4 +53,7 @@ h1{
 }
 .description_title{
     margin-top:50px; 
-} 
+}
+.description_date{
+    width: 150px;
+}

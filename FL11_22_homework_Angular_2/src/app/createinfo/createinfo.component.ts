@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemService } from '../services/item.service';
+import { Item } from '../modules/items';
 
 @Component({
   selector: 'app-createinfo',
@@ -6,25 +8,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./createinfo.component.css']
 })
 export class CreateinfoComponent implements OnInit {
-  
-  title:string;
-  description:string;
-  comment:string;
-  date:number;
-  author:string;
-  url:string
-  constructor() { }
+   item: Item = {
+     title: '',
+     description: '',
+     shortDescription:'',
+     author: '',
+     date:'',
+     url:''
+   }
+  constructor(private itemService: ItemService) {
+   }
 
   ngOnInit() {
+
   }
-  search(){
-    console.log(
-    `Title: ${this.title}
-    Description: ${this.description}
-    Comment: ${this.comment}
-    Date: ${this.date}
-    Author: ${this.author}
-    URL: ${this.url}`
-    );
+  onSubmit(){
+    if(this.item.title != '' && this.item.description != '' && this.item.shortDescription != '' && this.item.author != '' && this.item.date != '' && this.item.url !=''){
+      this.itemService.addItem(this.item);
+      this.item.title = '';
+      this.item.description = '';
+      this.item.shortDescription = '';
+      this.item.author = '';
+      this.item.date = '';
+      this.item.url = '';
+
+    }
   }
 }

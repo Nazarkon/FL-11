@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Item } from '../modules/items'
+import { ItemService } from '../services/item.service';
 
 @Component({
   selector: 'app-homepage',
@@ -7,24 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-  public newArr :[];
-  searchStr = '';
-  nature:string;
-  politic:string;
-  sport:string;
-  author:string;
-  midify:string;
-  constructor() { 
+   items: Item[];
+
+  constructor(private itemService: ItemService) { 
     
   }
   ngOnInit(): void {
-
+    this.itemService.getItems().subscribe(items =>{
+      console.log(items);
+      this.items = items;
+    })
   }
-   customFunction(val:any){
-     
-    this.midify = `Value  ${this.author}`
-    console.log(this.midify);
-    alert('Я не зумів доступитись до масиву,щоб його фільтрувати(((')
-  }
-
 }

@@ -3,12 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { HomepageComponent } from './homepage/homepage.component';
 import { MoreinfoComponent } from './moreinfo/moreinfo.component';
 import { CreateinfoComponent } from './createinfo/createinfo.component';
+
+
+import { AngularFireModule } from 'angularfire2'
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from 'angularfire2/firestore'
+
+import { SearchPipe } from '../app/homepage/search.pipe'
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms'; 
 import { HttpClientModule } from '@angular/common/http';
+import { ItemService } from './services/item.service';
 
 
 @NgModule({
@@ -17,11 +26,14 @@ import { HttpClientModule } from '@angular/common/http';
     HomepageComponent,
     MoreinfoComponent,
     CreateinfoComponent,
+    SearchPipe
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     HttpClientModule,
     RouterModule.forRoot([
       {
@@ -39,7 +51,7 @@ import { HttpClientModule } from '@angular/common/http';
     ]),
     FormsModule,
   ],
-  providers: [],
+  providers: [ItemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

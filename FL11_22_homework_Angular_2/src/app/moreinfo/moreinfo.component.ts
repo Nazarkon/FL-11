@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemService } from '../services/item.service';
 
 
 @Component({
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./moreinfo.component.css']
 })
 export class MoreinfoComponent implements OnInit {
-
-  constructor() { }
+  items: Item[];
+  constructor(private itemService: ItemService) { }
   ngOnInit(): void {
+    this.itemService.getItems().subscribe(items =>{
+      console.log(items);
+      this.items = items;
+    })
   }
 }
