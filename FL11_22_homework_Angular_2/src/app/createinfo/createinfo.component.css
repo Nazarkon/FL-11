@@ -1,0 +1,41 @@
+
+.head{
+    background-color: gray;
+    color:white;
+    height:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add__form{
+    margin-top:40px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    width: 500px;
+    color: white;
+    background-color: gray;
+}
+.input_left{
+    display: flex;
+    flex-direction: column;
+}
+.input_right{
+    display: flex;
+    flex-direction: column;
+}
+input[type="date"]{
+    margin-bottom: 20px;
+}
+input[type="text"]{
+    margin-bottom: 20px;
+}
+.input_btn{
+    display: flex;
+    justify-content: space-around;
+}
+textarea{
+    margin-bottom: 20px;
+}
