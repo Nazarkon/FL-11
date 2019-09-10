@@ -1,11 +1,12 @@
     <div class="head">
       <h3>More info</h3>
+      <h2>Refresh this page</h2>
     </div>
     <div class="container">
         <div *ngFor="let item of items" class="card__cont">
           <div class="description">
             <div class="photo">
-                <img src="" alt="Image">
+                <img src="{{item.url}}" alt="Image">
             </div>
             <div class="description_text">
               <h3 class="description_title">{{item.title}}</h3>

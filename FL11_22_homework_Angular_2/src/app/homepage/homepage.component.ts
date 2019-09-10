@@ -8,7 +8,8 @@ import { ItemService } from '../services/item.service';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-   items: Item[];
+   public items:Item[];
+   searchStr: '';
 
   constructor(private itemService: ItemService) { 
     

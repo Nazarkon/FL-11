@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../services/item.service';
+import { Item } from '../modules/items';
 
 
 @Component({
@@ -8,12 +9,14 @@ import { ItemService } from '../services/item.service';
   styleUrls: ['./moreinfo.component.css']
 })
 export class MoreinfoComponent implements OnInit {
-  items: Item[];
-  constructor(private itemService: ItemService) { }
-  ngOnInit(): void {
-    this.itemService.getItems().subscribe(items =>{
-      console.log(items);
-      this.items = items;
-    })
-  }
+  public items:Item[];
+
+ constructor(private itemService: ItemService) { 
+   
+ }
+ ngOnInit(): void {
+   this.itemService.getItems().subscribe(items =>{
+     this.items = items;
+   })
+}
 }

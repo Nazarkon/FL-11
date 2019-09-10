@@ -8,16 +8,15 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { MoreinfoComponent } from './moreinfo/moreinfo.component';
 import { CreateinfoComponent } from './createinfo/createinfo.component';
 
-
 import { AngularFireModule } from 'angularfire2'
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore'
 
-import { SearchPipe } from '../app/homepage/search.pipe'
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms'; 
 import { HttpClientModule } from '@angular/common/http';
 import { ItemService } from './services/item.service';
+import { SearchPipe } from './pipes/search.pipe';
 
 
 @NgModule({
@@ -26,7 +25,7 @@ import { ItemService } from './services/item.service';
     HomepageComponent,
     MoreinfoComponent,
     CreateinfoComponent,
-    SearchPipe
+    SearchPipe,
 
   ],
   imports: [
