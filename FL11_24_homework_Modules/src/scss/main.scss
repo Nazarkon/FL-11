@@ -1,0 +1,61 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import url('https://fonts.googleapis.com/css?family=Manjari&display=swap');
+
+body{
+    font-family: 'Manjari', sans-serif;
+}
+#battle{
+    @include flexOptions;
+    flex-wrap: wrap;
+}
+.field1,.field2{
+    width: $battlefieldWidth;
+    height:$battlefieldHeight;
+    background-color: $fieldColor;
+    text-align: center;
+    font-size: $textSize;
+}
+.battlelog{
+    width: $battlefieldWidth;
+    height:$battlefieldHeight;
+    background-color: $fieldColor;
+}
+#battle_buttons{
+    @include flexOptions;
+    flex-wrap: wrap;
+}
+.button{
+    width:$buttonWidth;
+    height:$buttonHeight;
+    font-size: $textSize;
+    color:$textColor;
+    border:0;
+    margin-top: 120px;
+    background-color:$buttonsColor;
+    border-radius:$buttonsRadious;
+}
+.button:hover{
+    background-color: $buttonHover;
+}
+.fieldTitle{
+    margin:0;
+    text-align: center;
+    padding-top:10px;
+    padding-bottom: 10px;
+    background-color: rgb(211, 84, 0 );
+}
+.battle_title{
+    text-align: center;
+    color:white;
+    margin-bottom: 30px;
+}
+.res{
+    margin-top: 90px;
+    text-align: center;
+    font-size: 30px;
+}
+.rounds,.wins,.Loses{
+    display: flex;
+    justify-content: center;
+}
