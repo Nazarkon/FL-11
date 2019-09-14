@@ -23,6 +23,9 @@ btnReset.addEventListener('click', function () {
     battleLog.innerHTML = '';
     Round.innerHTML = '';
     countRounds = 0;
+    btnPaper.disabled = false;
+    btnRock.disabled = false;
+    btnScisor.disabled = false;
 })
 btnPaper.addEventListener('click', function () {
     console.log(choiceStack[0]);
@@ -109,12 +112,16 @@ function checkResult(userChoice, computerChoice) {
     } else {
         alert('Game End,press Reset button to start this game again!')
         showResult();
+
     }
 }
 
 function showResult() {
     let countLoses = Loses;
     let countWins = Wins;
+    btnPaper.disabled = true;
+    btnRock.disabled = true;
+    btnScisor.disabled = true;
     if (countLoses > countWins) {
         battleLog.innerHTML = `<p class='res'>Result: You lose! Loser</p>`;
         battleField1.innerHTML = '';
