@@ -57,8 +57,9 @@ $("li:contains(Buratino)").css({"font-weight": "bold"});
 // ******************************************************
 
 // for b in p which is the only child set font size 36px
-
+$("p>b:only-child").css({"font-size": "36px"});
 // for em in p which is the last child of type set color to green
+$("p>em").css({"color" : "green"})
 
 
 
@@ -70,9 +71,13 @@ $("li:contains(Buratino)").css({"font-weight": "bold"});
 // ******************************************************
 
 // set width 80px for input with attribute name ended by 'age'
+$("input[name$='age']").css({"width" : "80px"})
 // set width 120px for input with attribute name started by 'my'
+$("input[name^='my']").css({"width" : "120px"})
 // console.log checked checkbox
+console.log($("input[type='checked'][checked]"));
 // show all images with a cat
+$("img[alt*='cat']").show();
 
 
 // ******************************************************
@@ -82,4 +87,6 @@ $("li:contains(Buratino)").css({"font-weight": "bold"});
 // children(), prev(), next(), siblings()
 // ******************************************************
 // for .mbox with index 3 set padding-top 50px
+$('.mbox:eq(3)').css({"padding-top" : "50px"})
 // for first div wraper for img set float left and border red
+$('.mbox:first()').css({"float" : "left" , "border" : "red"})
