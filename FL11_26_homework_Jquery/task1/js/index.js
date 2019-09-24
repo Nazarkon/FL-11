@@ -89,4 +89,6 @@ $("img[alt*='cat']").show();
 // for .mbox with index 3 set padding-top 50px
 $('.mbox:eq(3)').css({"padding-top" : "50px"})
 // for first div wraper for img set float left and border red
-$('.mbox:first()').css({"float" : "left" , "border" : "red"})
+$('.mbox>img:first()').css({"float" : "left" , "border" : "red"})
+
+//$('.mbox:first()').css({"float" : "left" , "border" : "red"})
