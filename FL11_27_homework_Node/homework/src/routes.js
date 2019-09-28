@@ -11,7 +11,7 @@ router.use(bodyParser.urlencoded({
 router.post('/car', function (req, res) {
     let result = car.addNewCar(req.body.id, req.body.brand, req.body.model, req.body.engineVolume, req.body.year);
     console.log(result)
-    res.status(result.status).send(result.body);
+    res.send(result.body);
 });
 
 router.get('/car/:id', function (req, res) {
@@ -24,5 +24,9 @@ router.get('/car',function(req,res) {
     res.send(result.body);
 })
 
+router.put('/car/:id', function (req, res) {
+    let result = car.putItemById(req.params.id, req.body.brand, req.body.model, req.body.engineVolume, req.body.year);
+    res.send(result.body);
+});
 module.exports = router;
 

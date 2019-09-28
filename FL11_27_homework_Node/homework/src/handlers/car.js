@@ -25,37 +25,43 @@ function getItemById(id) {
 
 function addNewCar(id, brand, model, engineVolume, year) {
     return CallDB(() => {
-        let addNewCar = {id: id,brand: brand,model: model,engineVolume: engineVolume,year: year
-        };
+        let addNewCar = {id: id,brand: brand,model: model,engineVolume: engineVolume,year: year};
         let car = data.find(function (car) {
             return car.id === Number(addNewCar.id);
         });
         if (!car) {
             data.push(addNewCar);
-            return {
-                status: 201,
-                body: addNewCar
-            }
+            return {status: 201,body: addNewCar}
         } else {
-            return {
-                status: 409,
-                body: {message: 'Car already exists.'}
-            }
+            return {status: 409,body: {"message": 'Car already exists.'}}
         }
     }, true);
 }
 
 function getAllCars(){
     return CallDB(() =>{
-        return{
+        return{status: 200,body:data}
+    })
+}
 
-            status: 200,
-            body:data
+function putItemById(id){
+    return CallDB(()=>{
+        let car =  data.find(function (car) { 
+            return car.id === Number(id)
+         })
+         if(car){
+            let car =  data.find(function (car) { 
+                return car.id !== Number(id)
+         });
+         return{status: 200,body: {"message": "The car has been successfully removed"}
+         }
+        }else{
+            return {status: 404}
         }
     })
 }
 
-
 module.exports.getItemById = getItemById;
 module.exports.addNewCar = addNewCar;
 module.exports.getAllCars = getAllCars;
+module.exports.putItemById = putItemById;
