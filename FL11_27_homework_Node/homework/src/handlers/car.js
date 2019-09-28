@@ -44,16 +44,17 @@ function getAllCars(){
     })
 }
 
-function putItemById(id){
+function putItemById(id, brand, model, engineVolume, year){
     return CallDB(()=>{
         let car =  data.find(function (car) { 
             return car.id === Number(id)
          })
          if(car){
-            let car =  data.find(function (car) { 
-                return car.id !== Number(id)
-         });
-         return{status: 200,body: {"message": "The car has been successfully removed"}
+          car.brand = brand;
+          car.model = model;
+          car.engineVolume = engineVolume;
+          car.year = year
+         return{status: 200,body: {"message": "The car has been successfully updated"}
          }
         }else{
             return {status: 404}
@@ -61,7 +62,25 @@ function putItemById(id){
     })
 }
 
+function deleteItemById(id){
+    return CallDB(()=>{
+        let car = data.find(function (car) {
+            return car.id === Number(id);
+        });
+        if(car){
+            let car = data.find(function (car) {
+             return car.id !== Number(id);
+        })
+        return {status: 200,body:{"message": "The car has been successfully removed"}}
+    }else{
+        return { status: 404, body:{"message" : "Car with such id has not been found"}}
+    }
+        
+    })
+}
+
 module.exports.getItemById = getItemById;
 module.exports.addNewCar = addNewCar;
 module.exports.getAllCars = getAllCars;
 module.exports.putItemById = putItemById;
+module.exports.deleteItemById = deleteItemById;

@@ -1,1 +1,7 @@
-// Your code goes here
+function logIn () {
+    return (req,res,next) => {
+     if(req.method === "DELETE"){
+         
+     }
+    }
+}

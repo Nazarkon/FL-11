@@ -28,5 +28,12 @@ router.put('/car/:id', function (req, res) {
     let result = car.putItemById(req.params.id, req.body.brand, req.body.model, req.body.engineVolume, req.body.year);
     res.send(result.body);
 });
+
+router.delete('/car/:id',function(req ,res){
+     let result = car.deleteItemById(req.params.id)
+     res.send(result)
+})
+
+
 module.exports = router;
 
