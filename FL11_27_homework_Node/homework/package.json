@@ -15,7 +15,7 @@
   },
   "scripts": {
     "test": "mocha tests",
-    "start": "nodemon --exec node src/server"
+    "start": "node src/server"
   },
   "author": "",
   "license": "ISC"
